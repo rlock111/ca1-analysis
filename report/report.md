@@ -8,6 +8,9 @@ Dingle Bay Furniture Workshop produces a range of various items of furniture and
 
 ## 2. Purpose, Scope and Boundary
 
+The order and production coordination system gives Dingle Bay Furniture Workshop a record of each order, from consultation to delivery. This will show what the customer has approved, which design and price applies, what materials are required and what stage the item is in production and an expected completion date.
+The main problem with this system is conflicting information, as the design progresses, particularly on custom orders, new specifications or designs may be drafted/required. This system relies on interpretation by staff which can potentially lead to flaws in the product if misinterpreted.
+
 ## 3. Stakeholders and Actors
 
 ## 4. Requirements Catalogue
