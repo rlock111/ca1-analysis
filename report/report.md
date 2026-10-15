@@ -6,6 +6,9 @@
 
 Dingle Bay Furniture Workshop produces a range of various items of furniture and also accepts custom commissions from households, cafés, offices and community organisations. Members of staff include designers, cabinetmakers, finishers, delivery staff and a workshop manager. When ordering, customers are able to request a standard product, a standard product with options, and a fully custom item. Custom work is a more complicated case than the other options as the design of the item may change during the work, and the customer's agreement to that design, its price and its expected delivery date must be updated as the creation and specification of the item progresses.
 
+### Process
+Enquiries, quotations, sketches, material lists and production updates are held in email, physical paper copies and spreadsheets. Production is planned during a weekly meeting. An accepted quotation becomes an order, which can contain several items, and staff may start a new job by copying an earlier job folder.
+
 ## 2. Purpose, Scope and Boundary
 
 The order and production coordination system gives Dingle Bay Furniture Workshop a record of each order, from consultation to delivery. This will show what the customer has approved, which design and price applies, what materials are required and what stage the item is in production and an expected completion date.
