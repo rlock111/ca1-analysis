@@ -4,15 +4,44 @@
 
 ## 1. Scenario Interpretation
 
-Dingle Bay Furniture Workshop produces a range of various items of furniture and also accepts custom commissions from households, cafés, offices and community organisations. Members of staff include designers, cabinetmakers, finishers, delivery staff and a workshop manager. When ordering, customers are able to request a standard product, a standard product with options, and a fully custom item. Custom work is a more complicated case than the other options as the design of the item may change during the work, and the customer's agreement to that design, its price and its expected delivery date must be updated as the creation and specification of the item progresses.
+### 1.1 Organisation
 
-### Process
+Dingle Bay Furniture Workshop produces a range of various items of furniture and also accepts custom commissions from households, cafés, offices and community organisations. Members of staff include designers, cabinetmakers, finishers, delivery staff and a workshop manager. When ordering, customers may request a standard product, a standard product with options, or a fully custom item. Custom work is a more complicated case than the other options as the design of the item may change during the work, and the customer's agreement to that design, its price and its expected delivery date must be updated as the creation and specification of the item progresses.
+
+### 1.2 Current Process
+
 Enquiries, quotations, sketches, material lists and production updates are held in email, physical paper copies and spreadsheets. Production is planned during a weekly meeting. An accepted quotation becomes an order, which can contain several items, and staff may start a new job by copying an earlier job folder.
+
+### 1.3 Problems
+
+The main problem is conflicting information. As the design progresses, particularly on custom orders, new specifications or designs may be drafted or required, these logs are spread across emails, folders and spreadsheets that do not always match the latest specifications.
+Staff find it difficult to identify:
+
+- which design is the current approved veersion
+- what materials are already committed to other orders
+- what stage each item is at in production
+- when the order is realistically going to be finished.
+  The current process relies on interpretation by staff, which can potentially lead to flaws in the product if a previous plan or outdated information is used instead of the latest version.
+
+### 1.4 Consequences
+
+### 1.5 Desired Outcomes
+
+### 1.6 Uncertainty
 
 ## 2. Purpose, Scope and Boundary
 
-The order and production coordination system gives Dingle Bay Furniture Workshop a record of each order, from consultation to delivery. This will show what the customer has approved, which design and price applies, what materials are required and what stage the item is in production and an expected completion date.
-The main problem with this system is conflicting information, as the design progresses, particularly on custom orders, new specifications or designs may be drafted/required. This system relies on interpretation by staff which can potentially lead to flaws in the product if misinterpreted.
+### 2.1 Purpose
+
+### 2.2 In Scope
+
+### 2.3 Out of Scope
+
+### 2.4 Dependencies
+
+### 2.5 Constraints
+
+### 2.6 Assumptions
 
 ## 3. Stakeholders and Actors
 
