@@ -25,9 +25,33 @@ Staff find it difficult to identify:
 
 ### 1.4 Consequences
 
+| ID  | Problem                             | Consequences                                                                                                                    | Evidence from scenario                                                                 |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| P1  | Current approved version unclear    | Staff work from a previous plan or outdated information, leading to flaws in the product                                        | The most recent email about a design may not be the version the customer approved.     |
+| P2  | Copying earlier job folders         | Outdated dimensions or notes are used in the new order                                                                          | Reusing an old job folder can carry outdated measurements and notes into a new job.    |
+| P3  | Changes not linked to price or date | Customer is not told about a price or date change before work continues                                                         | Customers want to hear about any change to the price or date before more work is done. |
+| P4  | Material commitments not tracked    | The same material is counted for more than one order                                                                            | Stock that looks available may already be set aside for several other orders.          |
+| P5  | Logs not kept up to date            | Emails, paper copies and spreadsheets don't match the latest stage of each item                                                 | Staff can move on to the next task without the office spreadsheet being updated.       |
+| P6  | Item and order status mixed up      | Staff disagree on whether an order is complete, which can lead to partial deliveries and extra transport and installation work. |
+| P7  | Completion dates unreliable         | Completion dates are not easily predictable, so customers may be told dates that later change                                   | Urgent orders, material delays and rework often change the order work is done in.      |
+
 ### 1.5 Desired Outcomes
 
+The workshop manager desires reliable information on approved orders, design versions, materials in use, work in progress, problems and expected completion.
+Customers desire progress updates without internal notes or unconfirmed dates, and early notice of price or date changes.
+Workshop staff desire the up to date drawings and instructions, without customer payment details.
+All staff desire to keep communicating to customers directly rather than accepting every change automatically.
+
 ### 1.6 Uncertainty
+
+The scenario does not confirm every policy, so some details have been are still unclear. It is not clear:
+
+- what counts as enough approval for a quotation, design or later change.
+- how partial approval of a design may be recorded.
+- when material is considered in use or committed to an order.
+- how production priority should change when materials, staff or machines are unavailable.
+- when a multi-item order is complete, and if partial delivery can be offered.
+- which progress and date information can be. given to customers before it is confirmed.
 
 ## 2. Purpose, Scope and Boundary
 
