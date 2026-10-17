@@ -25,15 +25,15 @@ Staff find it difficult to identify:
 
 ### 1.4 Consequences
 
-| ID  | Problem                             | Consequences                                                                                                                    | Evidence from scenario                                                                 |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| P1  | Current approved version unclear    | Staff work from a previous plan or outdated information, leading to flaws in the product                                        | The most recent email about a design may not be the version the customer approved.     |
-| P2  | Copying earlier job folders         | Outdated dimensions or notes are used in the new order                                                                          | Reusing an old job folder can carry outdated measurements and notes into a new job.    |
-| P3  | Changes not linked to price or date | Customer is not told about a price or date change before work continues                                                         | Customers want to hear about any change to the price or date before more work is done. |
-| P4  | Material commitments not tracked    | The same material is counted for more than one order                                                                            | Stock that looks available may already be set aside for several other orders.          |
-| P5  | Logs not kept up to date            | Emails, paper copies and spreadsheets don't match the latest stage of each item                                                 | Staff can move on to the next task without the office spreadsheet being updated.       |
-| P6  | Item and order status mixed up      | Staff disagree on whether an order is complete, which can lead to partial deliveries and extra transport and installation work. |
-| P7  | Completion dates unreliable         | Completion dates are not easily predictable, so customers may be told dates that later change                                   | Urgent orders, material delays and rework often change the order work is done in.      |
+| ID  | Problem                             | Consequences                                                                                                                    | Evidence from scenario                                                                                                      |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| P1  | Current approved version unclear    | Staff work from a previous plan or outdated information, leading to flaws in the product                                        | The most recent email about a design may not be the version the customer approved.                                          |
+| P2  | Copying earlier job folders         | Outdated dimensions or notes are used in the new order                                                                          | Reusing an old job folder can carry outdated measurements and notes into a new job.                                         |
+| P3  | Changes not linked to price or date | Customer is not told about a price or date change before work continues                                                         | Customers want to hear about any change to the price or date before more work is done.                                      |
+| P4  | Material commitments not tracked    | The same material is counted for more than one order                                                                            | Stock that looks available may already be set aside for several other orders.                                               |
+| P5  | Logs not kept up to date            | Emails, paper copies and spreadsheets don't match the latest stage of each item                                                 | Staff can move on to the next task without the office spreadsheet being updated.                                            |
+| P6  | Item and order status mixed up      | Staff disagree on whether an order is complete, which can lead to partial deliveries and extra transport and installation work. | One item in an order may be finished while another still needs rework, customers may request or agree to a partial delivery |
+| P7  | Completion dates unreliable         | Completion dates are not easily predictable, so customers may be told dates that later change                                   | Urgent orders, material delays and rework often change the order work is done in.                                           |
 
 ### 1.5 Desired Outcomes
 
@@ -57,11 +57,41 @@ The scenario does not confirm every policy, so some details have been are still 
 
 ### 2.1 Purpose
 
+The workshop order system gives Dingle Bay Furniture Workshop a record of each order, from enquiry to delivery. This will show what the customer has agreed to, which design version and price applies, what materials are required or already committed, what stage each item is at during production, and an expected completion date. The system is there to help staff rather than replacing their judgement in the process. Decisions such as whether a change is practical will still be made by staff, and the system will record what has been decided and who proposed a decision.
+
 ### 2.2 In Scope
+
+| Ref | The system will                                                                                                                                |
+| --- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| S1  | Record enquiries for standard products, standard products with options and fully custom items, including sketches or photos.                   |
+| S2  | Prepare and update quotations and turn an accepted quotation into an order, which may contain several items.                                   |
+| S3  | Keep a complete design history, show which one is the latest approved version and record if the customer approved all of it or only partially. |
+| S4  | Link any change to the price or date to the design version that caused it.                                                                     |
+| S5  | Record the materials each item needs, and show which materials are free and which are already committed to other orders.                       |
+| S6  | Record what stage each item is at in production, including any pauses, as not every item follows the same process.                             |
+| S7  | Record quality checks, what the outcome was and who made the decision.                                                                         |
+| S8  | Plan deliveries and record full deliveries, partial deliveries and any damage found on delivery.                                               |
+| S9  | Give the workshop manager an overview of work in progress, rework, bottlenecks and when each order is expected to be finished.                 |
+| S10 | Give customers progress updates that only include confirmed information.                                                                       |
 
 ### 2.3 Out of Scope
 
+The scenario states that detailed CAD, payroll, accounting and machine-control systems are outside the scope. The following are assumed out of scope due to lack of provided information:
+
+- buying materials from suppliers (the system only records that material has been ordered)
+- taking payments from customers (the system only records whether a deposit has been paid)
+- planning the order of work (the system supports the weekly planning meeting, but staff still decide).
+
 ### 2.4 Dependencies
+
+The system relies on the following, which are outside of its control:
+
+| Ref | Dependency         | Purpose                                                                                 | Evidence from scenario                                                               |
+| --- | ------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| D1  | CAD software       | Drawings are produced in CAD and attached to each design version.                       | Detailed CAD is out of scope, but design versions still include drawings.            |
+| D2  | Accounting         | Approved prices and deposit details are passed on to accounting (assumed).              | Accounting is out of scope, but quotations include prices and deposits are required. |
+| D3  | Material suppliers | Materials ordered for a job are delivered by suppliers, which affects production dates. | Material delays often change the order work is done in.                              |
+| D4  | Record keeping     | The system is only reliable if staff record progress as work happens.                   | Staff can move on to the next task without the office spreadsheet being updated.     |
 
 ### 2.5 Constraints
 
