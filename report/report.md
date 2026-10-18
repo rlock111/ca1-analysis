@@ -84,7 +84,7 @@ The scenario states that detailed CAD, payroll, accounting and machine-control s
 
 ### 2.4 Dependencies
 
-The system relies on the following, which are outside of its control:
+The system relies on the following dependencies outside the control of the system:
 
 | Ref | Dependency         | Purpose                                                                                 | Evidence from scenario                                                               |
 | --- | ------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
@@ -95,24 +95,109 @@ The system relies on the following, which are outside of its control:
 
 ### 2.5 Constraints
 
+The following constraints affect how the system works:
+
+| Ref | Constraint         | Effect                                                                                                               | Evidence from scenario                                                                                   |
+| --- | ------------------ | -------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| C1  | Internet access    | Drawings and instructions still need to be available on paper, and updates may have to be recorded later.            | Internet access in the workshop is inconsistent and paper drawings are still important.                  |
+| C2  | Information access | Customers should not see internal notes or unconfirmed dates, and workshop staff do not need to see payment details. | Customers want progress updates without internal notes, and workshop staff may not need payment details. |
+| C3  | Workshop capacity  | Expected completion dates need to take limited machine and finishing space into account.                             | Some machines can only be used by trained staff, and the finishing area has limited space.               |
+| C4  | Curing process     | An item cannot be marked as ready for delivery until it has finished curing.                                         | An item can look finished but may still need several days of curing before delivery.                     |
+
 ### 2.6 Assumptions
+
+These are assumptions based on non confirmed information. Each assumption refers to a point in 1.6.
+
+| Ref | Assumption                                                                                                            | Reason                                                                                                         | Refers to |
+| --- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------- |
+| A1  | Approval is recorded as full or partial, and production only starts once the full design is approved.                 | It is not clear what counts as enough approval, or how partial approval of a design may be recorded.           | S3        |
+| A2  | Material is counted as committed once it is assigned to an approved order item.                                       | It is not clear when material is considered in use or committed to an order.                                   | S5        |
+| A3  | Staff still decide the order of production, and the system only shows the status of each item and any pauses.         | It is not clear how production priority should change when materials, staff or machines are unavailable.       | S9        |
+| A4  | Each item has its own status, and the status of the whole order is worked out from its items.                         | It is not clear when a multi-item order is complete.                                                           | S8        |
+| A5  | Customers are only shown dates that staff have confirmed.                                                             | It is not clear which progress and date information can be given to customers.                                 | S10       |
+| A6  | Approved prices and deposit details are passed on to accounting.                                                      | The scenario does not say how information is passed to accounting.                                             | D2        |
+| A7  | Staff record any different deposit arrangements for repeat commercial customers, but the system does not decide them. | The scenario says repeat commercial customers may have different arrangements, but does not say what they are. | S2        |
 
 ## 3. Stakeholders and Actors
 
+### 3.1 Stakeholder Catalogue
+
+### 3.2 Actors
+
+### 3.3 Offstage Stakeholders
+
+### 3.4 Actor-Goal Catalogue
+
 ## 4. Requirements Catalogue
+
+### 4.1 Functional Requirements
+
+### 4.2 Non-Functional Requirements
+
+### 4.3 Prioritisation Rationale
 
 ## 5. Rules and Uncertainty Register
 
+### 5.1 Business Rules
+
+### 5.2 Assumptions
+
+### 5.3 Constraints
+
+### 5.4 Risks
+
+### 5.5 Clarification Questions
+
 ## 6. Use-Case Model
+
+### 6.1 Use-Case Diagram
+
+### 6.2 Use-Case Catalogue
+
+### 6.3 Detailed Use Case
 
 ## 7. Gherkin Examples
 
+### 7.1 Scenario Overview
+
+### 7.2 Feature Files
+
 ## 8. Candidate-Concept Analysis
+
+### 8.1 Candidate Extraction
+
+### 8.2 Classification and Decisions
+
+### 8.3 Glossary
 
 ## 9. Domain Model
 
+### 9.1 Domain Model Diagram
+
+### 9.2 Modelling Rationale
+
 ## 10. Traceability Matrix
+
+### 10.1 Matrix
+
+### 10.2 Gaps and Notes
 
 ## 11. Reflection
 
+### 11.1 Key Decisions
+
+### 11.2 Revisions
+
+### 11.3 Limitations and Unresolved Questions
+
 ## 12. AI Declaration
+
+### 12.1 Tools and Use
+
+### 12.2 Verification
+
+### 12.3 Changed or Rejected Suggestions
+
+## References
+
+## Appendices
