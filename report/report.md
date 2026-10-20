@@ -196,15 +196,15 @@ Each requirement describes one thing the system must do, so it can be tested on 
 
 Each non-functional requirement has a measurable target, so it can be checked rather than judged. The targets are proposed and would need to be agreed with the workshop manager.
 
-| Ref  | Quality        | Requirement                                                                                                            | Refers to     | Priority | Verification                        |
-| ---- | -------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ----------------------------------- |
-| NFR1 | Availability   | Staff can record a production update without an internet connection, and it is saved within 5 minutes of reconnecting. | C1, D4        | Must     | Test with the connection turned off |
-| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                                     | C2            | Must     | Test each type of user & priveleges |
-| NFR3 | Usability      | After 15 minutes of training, staff can record a production update in under 30 seconds.                                | D4, P5        | Should   | Timed test with 3 staff             |
-| NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                              | S7, FR5, FR10 | Must     | Check 30 sample records             |
-| NFR5 | Performance    | The workshop manager's overview loads within 3 seconds for up to 200 open items.                                       | FR11          | Could    | Load test with sample data          |
+| Ref  | Quality        | Requirement                                                                                                    | Refers to     | Priority | Verification                        |
+| ---- | -------------- | -------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ----------------------------------- |
+| NFR1 | Availability   | Staff can record a production update without an internet connection, and it is saved shortly after connecting. | C1, D4        | Must     | Test with the connection turned off |
+| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                             | C2            | Must     | Test each type of user & priveleges |
+| NFR3 | Usability      | After 15 minutes of training, staff can record a production update in under 30 seconds.                        | D4, P5        | Should   | Timed test with 3 staff             |
+| NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                      | S7, FR5, FR10 | Must     | Check 30 sample records             |
+| NFR5 | Performance    | The workshop manager's overview loads within 3 seconds for up to 200 open items.                               | FR11          | Could    | Load test with sample data          |
 
-<!-- !NOTE rewrite nfr1 at some point, have race condition in mind -->
+<!--NOTE conflicting updates require managers approval -->
 
 ### 4.3 Prioritisation Rationale
 
@@ -215,11 +215,33 @@ FR10-12 are marked as Should, as they reduce rework and delivery problems, but t
 
 ### 5.1 Business Rules
 
+The following business rules are policies the workshop already follows, based on the scenario. Some are only partialy confirmed, as the scenario does not give every detail.
+
+| Ref | Business rule                                                                                                       | Evidence from scenario                                                                             | Confirmation                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| BR1 | An item cannot go into production until the customer has approved the design.                                       | Staff normally require customer approval before production begins.                                 | Confirmed, but tbe approval criteria is unclear                      |
+| BR2 | An item cannot go into production until a deposit has been paid, unless a different arrangement has been agreed to. | Staff normally require a deposit, but repeat commercial customers can have different arrangements. | Confirmed                                                            |
+| BR3 | If a change affects the price or date, the customer must agree to it before work carries on.                        | Customers want to hear about any change to the price or date before more work is done.             | Proposed, as this comes from the customer and is not a stated policy |
+| BR4 | An item cannot be delivered until it has finished curing.                                                           | An item can look finished but may still need several days of curing before delivery.               | Confirmed                                                            |
+| BR5 | Certain machines can only be used by trained staff.                                                                 | Some machines need trained staff.                                                                  | Confirmed                                                            |
+| BR6 | The price on a quotation may change if the specification is revised or unusual materials are chosen.                | Prices can change when specifications change or unusual materials are selected.                    | Confirmed                                                            |
+
 ### 5.2 Assumptions
+
+<!--NOTE I am not sure if i should remove these sections as they seem redundant, I will leave them here for now to tick all boxes-->
+
+Assumptions are shown in 2.6.
 
 ### 5.3 Constraints
 
+Constraints are shown in 2.5.
+
 ### 5.4 Risks
+
+| Ref | Risk                                                                      | Effect                                                                  | Reduction                                                            |
+| --- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| R1  | Staff do not keep the system up to date.                                  | The system maintains outdated logs, which makes the main problem worse. | Keep updates quick (NFR3) and allow updates without internet (NFR1). |
+| R2  | Two updates are made to the same item at the same time, or while offline. | The item may show the wrong stage, or one update may be lost.           | Allow workshop manager to approve clashing updates.                  |
 
 ### 5.5 Clarification Questions
 
@@ -268,6 +290,22 @@ FR10-12 are marked as Should, as they reduce rework and delivery problems, but t
 ## 12. AI Declaration
 
 ### 12.1 Tools and Use
+
+AI Tools used:
+
+- Claude (Opus 5.5 on website).
+
+Usage:
+
+- Creating headings and subheadings.
+- Clarifying details regarding the system, requirements of the report and marking criteria.
+- Showing how to create markdown tables and general help with markdown formatting.
+- General help with explaining course material
+
+Other Tools used:
+
+- Zed (Text editor)
+- Github desktop (version control)
 
 ### 12.2 Verification
 
