@@ -72,7 +72,7 @@ The workshop order system gives Dingle Bay Furniture Workshop a record of each o
 | S7  | Record quality checks, what the outcome was and who made the decision.                                                                         |
 | S8  | Plan deliveries and record full deliveries, partial deliveries and any damage found on delivery.                                               |
 | S9  | Give the workshop manager an overview of work in progress, rework, bottlenecks and when each order is expected to be finished.                 |
-| S10 | Give customers progress updates that only include confirmed information.                                                                       |
+| S10 | Show which progress details and dates are confirmed, so staff only pass confirmed information on to customers.                                 |
 
 ### 2.3 Out of Scope
 
@@ -114,7 +114,7 @@ These are assumptions based on non confirmed information. Each assumption refers
 | A2  | Material is counted as committed once it is assigned to an approved order item.                                       | It is not clear when material is considered in use or committed to an order.                                   | S5        |
 | A3  | Staff still decide the order of production, and the system only shows the status of each item and any pauses.         | It is not clear how production priority should change when materials, staff or machines are unavailable.       | S9        |
 | A4  | Each item has its own status, and the status of the whole order is worked out from its items.                         | It is not clear when a multi-item order is complete.                                                           | S8        |
-| A5  | Customers are only shown dates that staff have confirmed.                                                             | It is not clear which progress and date information can be given to customers.                                 | S10       |
+| A5  | Customers do not use the system directly, and staff only pass on dates that have been confirmed.                      | It is not clear which progress and date information can be given to customers.                                 | S10       |
 | A6  | Approved prices and deposit details are passed on to accounting.                                                      | The scenario does not say how information is passed to accounting.                                             | D2        |
 | A7  | Staff record any different deposit arrangements for repeat commercial customers, but the system does not decide them. | The scenario says repeat commercial customers may have different arrangements, but does not say what they are. | S2        |
 
@@ -122,19 +122,94 @@ These are assumptions based on non confirmed information. Each assumption refers
 
 ### 3.1 Stakeholder Catalogue
 
+| Ref | Stakeholder                | What they require                                                                                                      | Evidence from scenario                                                                    |
+| --- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| SH1 | Workshop manager           | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.             |
+| SH2 | Designer                   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.        |
+| SH3 | Cabinetmaker               | Up to date drawings and instructions, and a simple way to record progress, as not every item follows the same process. | Not every item goes through the same production steps.                                    |
+| SH4 | Finisher                   | A way of showing an item is still curing, so it is not treated as ready for delivery too early.                        | An item can look finished but may still need several days of curing before delivery.      |
+| SH5 | Delivery coordinator       | To know which items are ready, so that full or partial deliveries can be planned.                                      | One item in an order may be finished while another still needs rework.                    |
+| SH6 | Customer                   | A clear quotation, and to be told about any change to the price or date before more work is done.                      | Customers expect to be told before work carries on if a change affects the price or date. |
+| SH7 | Repeat commercial customer | The same as other customers, although their approval and deposit arrangements may be different.                        | The scenario says they may have different arrangements, but not what they are.            |
+| SH8 | Material suppliers         | Clear orders for timber, sheet material, hardware and finishes.                                                        | Material delays often change the order work is done in.                                   |
+| SH9 | Accounting (assumed)       | The approved prices and whether a deposit has been paid.                                                               | Accounting is out of scope, and how it receives information is not clear (D2, A6).        |
+
 ### 3.2 Actors
+
+| Actor                | Type                                       | Refers to | Reason                                                                                                              |
+| -------------------- | ------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Workshop manager     | Primary                                    | SH1       | Checks progress, sets priorities and releases items to production.                                                  |
+| Designer             | Primary                                    | SH2       | Records enquiries, prepares quotations, keeps design versions and records changes.                                  |
+| Production worker    | Primary                                    | SH3, SH4  | Cabinetmakers and finishers both need to view instructions and record progress, so they are grouped into one actor. |
+| Finisher             | Primary (may fall under production worker) | SH4       | Kept separate as their only duty is recording curing.                                                               |
+| Delivery coordinator | Primary                                    | SH5       | Plans and records full and partial deliveries.                                                                      |
+| Accounting system    | Supporting                                 | SH9       | Receives price and deposit details from the system, but doesn't start anything by itself.                           |
+
+CAD software is not an actor, as the designer attaches the drawings and the CAD software never uses the system itself. It is listed as a dependency instead.
 
 ### 3.3 Offstage Stakeholders
 
+Some stakeholders do not use the system but still affect what it needs to do. Material suppliers are an offstage stakeholder. Supplier delays are the reason expected completion dates can change. Customers (SH6-7) are also offstage stakeholders, as they do not use the system directly. Staff pass progress updates on to them, which is why only confirmed dates should be shared (A5).
+
 ### 3.4 Actor-Goal Catalogue
+
+The goals below are what each actor aims to achieve using the system. Each one links to a problem from 1.4 or an item in the scope (2.2).
+
+| Ref  | Actor                | Goal                                                            | Refers to  |
+| ---- | -------------------- | --------------------------------------------------------------- | ---------- |
+| AG1  | Designer             | Record an enquiry and prepare a quotation                       | P2, S1, S2 |
+| AG2  | Designer             | Create a new design version                                     | P1, S3     |
+| AG3  | Designer             | Record if the customer approved all of a design or only part    | P1, S3     |
+| AG4  | Designer             | Record a change and how it affects the price and date           | P3, S4     |
+| AG5  | Workshop manager     | Commit materials to an order item                               | P4, S5     |
+| AG6  | Workshop manager     | Check work in progress and set priorities                       | P5, S9     |
+| AG7  | Production worker    | Record a production stage as started, paused or finished        | P5, S6     |
+| AG8  | Finisher             | Record curing and the earliest date an item can be delivered    | C4, S6     |
+| AG9  | Production worker    | Record the outcome of a quality check and who made the decision | S7         |
+| AG10 | Delivery coordinator | Plan and record a full or partial delivery                      | P6, S8     |
+| AG11 | Workshop manager     | Pass confirmed progress and dates on to a customer              | S10, A5    |
+| AG12 | Workshop manager     | Release an item to production once the full design is approved  | P1, A1     |
 
 ## 4. Requirements Catalogue
 
 ### 4.1 Functional Requirements
 
+Each requirement describes one thing the system must do, so it can be tested on its own. Each one refers back to the scope (2.2), an actor goal (3.4), a problem (1.4) or an assumption (2.6).
+
+| Ref  | Requirement                                                                                                                                                                   | Refers to            | Priority | Verification                                                |
+| ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------- | ----------------------------------------------------------- |
+| FR1  | The system shall record an enquiry with the customer details, item type, dimensions, intended use, timber, finish, delivery location, target date and any sketches or photos. | S1, AG1              | Must     | Check an enquiry record holds all fields                    |
+| FR2  | The system shall record a quotation with separate amounts for design, materials, production, finishing and delivery.                                                          | S2, AG1              | Must     | Test that the total equals the sum of each amount           |
+| FR3  | The system shall turn an accepted quotation into an order containing one or more items.                                                                                       | S2, AG1              | Must     | Test with a quotation for three items                       |
+| FR4  | The system shall save each design version as a new numbered version without changing earlier versions.                                                                        | S3, AG2, P1          | Must     | Test that version 1 is unchanged after version 2 is saved   |
+| FR5  | The system shall record each approval against one design version, stating whether it is full or partial, the date and who recorded it.                                        | S3, AG3, A1          | Must     | Test that a full and a partial approval are both recorded   |
+| FR6  | The system shall stop an item being released to production until its design version has full approval.                                                                        | AG12, A1             | Must     | Test that an item with partial approval cannot be released  |
+| FR7  | The system shall link each change to the design version it replaces and record how it affects the price and completion date.                                                  | S4, AG4, P3          | Must     | Test that a change creates a new version with the new price |
+| FR8  | The system shall record how much material is committed to each order item and show the remaining free quantity.                                                               | S5, AG5, P4, A2      | Must     | Test , with X total, Y in use, free quantity = X-Y          |
+| FR9  | The system shall record each production stage for an item as started, paused (with a reason) or finished, in any order.                                                       | S6, AG7, AG8, P5     | Must     | Walkthrough of recording stages for one item                |
+| FR10 | The system shall record the outcome of each quality check and who made the decision.                                                                                          | S7, AG9              | Should   | Check a sample of quality records                           |
+| FR11 | The system shall show the workshop manager all open items with their stage, any pauses or information and the expected completion date.                                       | S9, AG6, P7          | Should   | Demonstration with sample orders                            |
+| FR12 | The system shall record a delivery containing some or all items of an order, mark it as partial if items remain, and not include items still curing.                          | S8, AG10, P6, A4, C4 | Should   | Test that a delivery of 1 of 3 items is marked as partial   |
+| FR13 | The system shall mark each expected completion date as confirmed or unconfirmed, so staff only pass confirmed dates on to customers.                                          | S10, AG11, A5, P7    | Could    | Check an unconfirmed date is marked as unconfirmed          |
+
 ### 4.2 Non-Functional Requirements
 
+Each non-functional requirement has a measurable target, so it can be checked rather than judged. The targets are proposed and would need to be agreed with the workshop manager.
+
+| Ref  | Quality        | Requirement                                                                                                            | Refers to     | Priority | Verification                        |
+| ---- | -------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ----------------------------------- |
+| NFR1 | Availability   | Staff can record a production update without an internet connection, and it is saved within 5 minutes of reconnecting. | C1, D4        | Must     | Test with the connection turned off |
+| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                                     | C2            | Must     | Test each type of user & priveleges |
+| NFR3 | Usability      | After 15 minutes of training, staff can record a production update in under 30 seconds.                                | D4, P5        | Should   | Timed test with 3 staff             |
+| NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                              | S7, FR5, FR10 | Must     | Check 30 sample records             |
+| NFR5 | Performance    | The workshop manager's overview loads within 3 seconds for up to 200 open items.                                       | FR11          | Could    | Load test with sample data          |
+
+<!-- !NOTE rewrite nfr1 at some point, have race condition in mind -->
+
 ### 4.3 Prioritisation Rationale
+
+Requirements are prioritised using the MoSCoW system. The Must requirements deal with the main problem, conflicting information. Without saving each design version (FR4), recording approval (FR5), stopping unapproved items going into production (FR6), linking changes to price and date (FR7) and tracking committed materials (FR8), staff would still have to rely only on interpretation, which may lead to flaws in the final product. FR9 and NFR1 are Must because the system is only useful if staff can keep it up to date, even when the workshop internet is down
+FR10-12 are marked as Should, as they reduce rework and delivery problems, but the workshop could manage for a short time without them. FR13 is Could, as staff can still pass on progress updates without it, but it helps avoid customers being told dates that later change (P7). Nothing is marked as Wont, but the out of scope items in 2.3 are effectively Wont for this system.
 
 ## 5. Rules and Uncertainty Register
 
