@@ -25,19 +25,19 @@ Staff find it difficult to identify:
 
 ### 1.4 Consequences
 
-| ID  | Problem                             | Consequences                                                                                                                    | Evidence from scenario                                                                                                      |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| P1  | Current approved version unclear    | Staff work from a previous plan or outdated information, leading to flaws in the product                                        | The most recent email about a design may not be the version the customer approved.                                          |
-| P2  | Copying earlier job folders         | Outdated dimensions or notes are used in the new order                                                                          | Reusing an old job folder can carry outdated measurements and notes into a new job.                                         |
-| P3  | Changes not linked to price or date | Customer is not told about a price or date change before work continues                                                         | Customers want to hear about any change to the price or date before more work is done.                                      |
-| P4  | Material commitments not tracked    | The same material is counted for more than one order                                                                            | Stock that looks available may already be set aside for several other orders.                                               |
-| P5  | Logs not kept up to date            | Emails, paper copies and spreadsheets don't match the latest stage of each item                                                 | Staff can move on to the next task without the office spreadsheet being updated.                                            |
-| P6  | Item and order status mixed up      | Staff disagree on whether an order is complete, which can lead to partial deliveries and extra transport and installation work. | One item in an order may be finished while another still needs rework, customers may request or agree to a partial delivery |
-| P7  | Completion dates unreliable         | Completion dates are not easily predictable, so customers may be told dates that later change                                   | Urgent orders, material delays and rework often change the order work is done in.                                           |
+| Ref | Problem                             | Consequences                                                                                                                    | Evidence from scenario                                                                                                |
+| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| P1  | Current approved version unclear    | Staff work from a previous plan or outdated information, leading to flaws in the product                                        | The most recent email about a design may not be the version the customer approved.                                    |
+| P2  | Copying earlier job folders         | Outdated dimensions or notes are used in the new order                                                                          | Reusing an old job folder can carry outdated measurements and notes into a new job.                                   |
+| P3  | Changes not linked to price or date | Customer is not told about a price or date change before work continues                                                         | Customers want to hear about any change to the price or date before more work is done.                                |
+| P4  | Material commitments not tracked    | The same material is counted for more than one order                                                                            | Stock that looks available may already be set aside for several other orders.                                         |
+| P5  | Logs not kept up to date            | Emails, paper copies and spreadsheets don't match the latest stage of each item                                                 | Staff can move on to the next task without the office spreadsheet being updated.                                      |
+| P6  | Item and order status mixed up      | Staff disagree on whether an order is complete, which can lead to partial deliveries and extra transport and installation work. | One item in an order may be finished while another still needs rework, and customers may agree to a partial delivery. |
+| P7  | Completion dates unreliable         | Completion dates are not easily predictable, so customers may be told dates that later change                                   | Urgent orders, material delays and rework often change the order work is done in.                                     |
 
 ### 1.5 Desired Outcomes
 
-The workshop manager desires reliable information on approved orders, design versions, materials in use, work in progress, problems and expected completion.
+The workshop manager desires reliable information on approved orders, design versions, committed materials, work in progress, bottlenecks, rework and expected completion.
 Customers desire progress updates without internal notes or unconfirmed dates, and early notice of price or date changes.
 Workshop staff desire the up to date drawings and instructions, without customer payment details.
 All staff desire to keep communicating to customers directly rather than accepting every change automatically.
@@ -46,18 +46,21 @@ All staff desire to keep communicating to customers directly rather than accepti
 
 The scenario does not confirm every policy, so some details have been are still unclear. It is not clear:
 
-- what counts as enough approval for a quotation, design or later change.
-- how partial approval of a design may be recorded.
-- when material is considered in use or committed to an order.
-- how production priority should change when materials, staff or machines are unavailable.
-- when a multi-item order is complete, and if partial delivery can be offered.
-- which progress and date information can be. given to customers before it is confirmed.
+- What counts as enough approval for a quotation, design or later change.
+- How partial approval of a design may be recorded.
+- When material is considered in use or committed to an order.
+- How production priority should change when materials, staff or machines are unavailable.
+- Who can accept a change from the approved design or sign off rework.
+- When a multi-item order is complete, and if partial delivery can be offered.
+- Which progress and date information can be. given to customers before it is confirmed.
+
+These points have not been treated as rules, and are instead treated as assumptions.
 
 ## 2. Purpose, Scope and Boundary
 
 ### 2.1 Purpose
 
-The workshop order system gives Dingle Bay Furniture Workshop a record of each order, from enquiry to delivery. This will show what the customer has agreed to, which design version and price applies, what materials are required or already committed, what stage each item is at during production, and an expected completion date. The system is there to help staff rather than replacing their judgement in the process. Decisions such as whether a change is practical will still be made by staff, and the system will record what has been decided and who proposed a decision.
+The workshop order system will give Dingle Bay Furniture Workshop a record of each order, from enquiry to delivery. This will show what the customer has agreed to, which design version and price applies, what materials are required or already committed, what stage each item is at during production, and an expected completion date. The system is there to help staff rather than replacing their judgement in the process. Decisions such as whether a change is practical will still be made by staff, and the system will record what has been decided and who made the decision.
 
 ### 2.2 In Scope
 
@@ -76,7 +79,7 @@ The workshop order system gives Dingle Bay Furniture Workshop a record of each o
 
 ### 2.3 Out of Scope
 
-The scenario states that detailed CAD, payroll, accounting and machine-control systems are outside the scope. The following are assumed out of scope due to lack of provided information:
+The scenario states that detailed CAD, payroll, accounting and machine-control systems are outside the scope. The following are also assumed out of scope, as they go beyond order and production coordination:
 
 - buying materials from suppliers (the system only records that material has been ordered)
 - taking payments from customers (the system only records whether a deposit has been paid)
@@ -106,7 +109,7 @@ The following constraints affect how the system works:
 
 ### 2.6 Assumptions
 
-These are assumptions based on non confirmed information. Each assumption refers to a point in 1.6.
+These are assumptions based on non confirmed information. Most come from the unclear points in 1.6, and each one refers to the part of the scope (2.2) or dependencies (2.4) that it affects.
 
 | Ref | Assumption                                                                                                            | Reason                                                                                                         | Refers to |
 | --- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------- |
@@ -117,33 +120,36 @@ These are assumptions based on non confirmed information. Each assumption refers
 | A5  | Customers do not use the system directly, and staff only pass on dates that have been confirmed.                      | It is not clear which progress and date information can be given to customers.                                 | S10       |
 | A6  | Approved prices and deposit details are passed on to accounting.                                                      | The scenario does not say how information is passed to accounting.                                             | D2        |
 | A7  | Staff record any different deposit arrangements for repeat commercial customers, but the system does not decide them. | The scenario says repeat commercial customers may have different arrangements, but does not say what they are. | S2        |
+| A8  | The workshop manager can accept a change from the approved design or sign off rework.                                 | It is not clear who can accept a deviation or authorise rework.                                                | S7        |
 
 ## 3. Stakeholders and Actors
 
 ### 3.1 Stakeholder Catalogue
 
-| Ref | Stakeholder                | What they require                                                                                                      | Evidence from scenario                                                                    |
-| --- | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| SH1 | Workshop manager           | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.             |
-| SH2 | Designer                   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.        |
-| SH3 | Cabinetmaker               | Up to date drawings and instructions, and a simple way to record progress, as not every item follows the same process. | Not every item goes through the same production steps.                                    |
-| SH4 | Finisher                   | A way of showing an item is still curing, so it is not treated as ready for delivery too early.                        | An item can look finished but may still need several days of curing before delivery.      |
-| SH5 | Delivery coordinator       | To know which items are ready, so that full or partial deliveries can be planned.                                      | One item in an order may be finished while another still needs rework.                    |
-| SH6 | Customer                   | A clear quotation, and to be told about any change to the price or date before more work is done.                      | Customers expect to be told before work carries on if a change affects the price or date. |
-| SH7 | Repeat commercial customer | The same as other customers, although their approval and deposit arrangements may be different.                        | The scenario says they may have different arrangements, but not what they are.            |
-| SH8 | Material suppliers         | Clear orders for timber, sheet material, hardware and finishes.                                                        | Material delays often change the order work is done in.                                   |
-| SH9 | Accounting (assumed)       | The approved prices and whether a deposit has been paid.                                                               | Accounting is out of scope, and how it receives information is not clear (D2, A6).        |
+The following stakeholders are affected by the system. SH1-5 are direct stakeholders, as they use the system themselves. SH6-7 are indirect stakeholders, as they do not use the system but are affected by the information staff pass on to them. SH8-9 are external to the workshop. Influence shows how much each stakeholder shapes what the system needs to do.
+
+| Ref | Stakeholder                | Type     | What they require                                                                                                      | Concern (from scenario)                                                                   | Influence |
+| --- | -------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------- |
+| SH1 | Workshop manager           | Direct   | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.             | High      |
+| SH2 | Designer                   | Direct   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.        | High      |
+| SH3 | Cabinetmaker               | Direct   | Up to date drawings and instructions, and a simple way to record progress, as not every item follows the same process. | Not every item goes through the same production steps.                                    | Medium    |
+| SH4 | Finisher                   | Direct   | A way of showing an item is still curing, so it is not treated as ready for delivery too early.                        | An item can look finished but may still need several days of curing before delivery.      | Medium    |
+| SH5 | Delivery coordinator       | Direct   | To know which items are ready, so that full or partial deliveries can be planned.                                      | One item in an order may be finished while another still needs rework.                    | Medium    |
+| SH6 | Customer                   | Indirect | A clear quotation, and to be told about any change to the price or date before more work is done.                      | Customers expect to be told before work carries on if a change affects the price or date. | High      |
+| SH7 | Repeat commercial customer | Indirect | The same as other customers, although their approval and deposit arrangements may be different.                        | The scenario says they may have different arrangements, but not what they are.            | Medium    |
+| SH8 | Material suppliers         | External | Clear orders for timber, sheet material, hardware and finishes.                                                        | Material delays often change the order work is done in.                                   | Low       |
+| SH9 | Accounting (assumed)       | External | The approved prices and whether a deposit has been paid.                                                               | Accounting is out of scope, and how it receives information is not clear (D2, A6).        | Low       |
 
 ### 3.2 Actors
 
-| Actor                | Type                                       | Refers to | Reason                                                                                                              |
-| -------------------- | ------------------------------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
-| Workshop manager     | Primary                                    | SH1       | Checks progress, sets priorities and releases items to production.                                                  |
-| Designer             | Primary                                    | SH2       | Records enquiries, prepares quotations, keeps design versions and records changes.                                  |
-| Production worker    | Primary                                    | SH3, SH4  | Cabinetmakers and finishers both need to view instructions and record progress, so they are grouped into one actor. |
-| Finisher             | Primary (may fall under production worker) | SH4       | Kept separate as their only duty is recording curing.                                                               |
-| Delivery coordinator | Primary                                    | SH5       | Plans and records full and partial deliveries.                                                                      |
-| Accounting system    | Supporting                                 | SH9       | Receives price and deposit details from the system, but doesn't start anything by itself.                           |
+| Actor                | Type       | Refers to | Reason                                                                                                              |
+| -------------------- | ---------- | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Workshop manager     | Primary    | SH1       | Checks progress, sets priorities and releases items to production.                                                  |
+| Designer             | Primary    | SH2       | Records enquiries, prepares quotations, keeps design versions and records changes.                                  |
+| Production worker    | Primary    | SH3, SH4  | Cabinetmakers and finishers both need to view instructions and record progress, so they are grouped into one actor. |
+| Finisher             | Primary    | SH4       | Also records curing, which only finishers do, so they are shown as a separate actor as well.                        |
+| Delivery coordinator | Primary    | SH5       | Plans and records full and partial deliveries.                                                                      |
+| Accounting system    | Supporting | SH9       | Receives price and deposit details from the system, but doesn't start anything by itself.                           |
 
 CAD software is not an actor, as the designer attaches the drawings and the CAD software never uses the system itself. It is listed as a dependency instead.
 
@@ -179,37 +185,44 @@ Each requirement describes one thing the system must do, so it can be tested on 
 | Ref  | Requirement                                                                                                                                                                   | Refers to            | Priority | Verification                                                |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------- | -------- | ----------------------------------------------------------- |
 | FR1  | The system shall record an enquiry with the customer details, item type, dimensions, intended use, timber, finish, delivery location, target date and any sketches or photos. | S1, AG1              | Must     | Check an enquiry record holds all fields                    |
-| FR2  | The system shall record a quotation with separate amounts for design, materials, production, finishing and delivery.                                                          | S2, AG1              | Must     | Test that the total equals the sum of each amount           |
+| FR2  | The system shall record a quotation with separate amounts for design, materials, production, finishing and delivery.                                                          | S2, AG1              | Should   | Test that the total equals the sum of each amount           |
 | FR3  | The system shall turn an accepted quotation into an order containing one or more items.                                                                                       | S2, AG1              | Must     | Test with a quotation for three items                       |
 | FR4  | The system shall save each design version as a new numbered version without changing earlier versions.                                                                        | S3, AG2, P1          | Must     | Test that version 1 is unchanged after version 2 is saved   |
 | FR5  | The system shall record each approval against one design version, stating whether it is full or partial, the date and who recorded it.                                        | S3, AG3, A1          | Must     | Test that a full and a partial approval are both recorded   |
 | FR6  | The system shall stop an item being released to production until its design version has full approval.                                                                        | AG12, A1             | Must     | Test that an item with partial approval cannot be released  |
 | FR7  | The system shall link each change to the design version it replaces and record how it affects the price and completion date.                                                  | S4, AG4, P3          | Must     | Test that a change creates a new version with the new price |
-| FR8  | The system shall record how much material is committed to each order item and show the remaining free quantity.                                                               | S5, AG5, P4, A2      | Must     | Test , with X total, Y in use, free quantity = X-Y          |
+| FR8  | The system shall record how much material is committed to each order item and show the remaining free quantity.                                                               | S5, AG5, P4, A2      | Must     | Test , with X total, Y committed, free quantity = X-Y       |
 | FR9  | The system shall record each production stage for an item as started, paused (with a reason) or finished, in any order.                                                       | S6, AG7, AG8, P5     | Must     | Walkthrough of recording stages for one item                |
 | FR10 | The system shall record the outcome of each quality check and who made the decision.                                                                                          | S7, AG9              | Should   | Check a sample of quality records                           |
 | FR11 | The system shall show the workshop manager all open items with their stage, any pauses or information and the expected completion date.                                       | S9, AG6, P7          | Should   | Demonstration with sample orders                            |
 | FR12 | The system shall record a delivery containing some or all items of an order, mark it as partial if items remain, and not include items still curing.                          | S8, AG10, P6, A4, C4 | Should   | Test that a delivery of 1 of 3 items is marked as partial   |
 | FR13 | The system shall mark each expected completion date as confirmed or unconfirmed, so staff only pass confirmed dates on to customers.                                          | S10, AG11, A5, P7    | Could    | Check an unconfirmed date is marked as unconfirmed          |
+| FR14 | The system shall flag clashing updates to the same item for the workshop manager to approve.                                                                                  | S6, AG6, C1          | Should   | Test two different updates to one item made while offline   |
 
 ### 4.2 Non-Functional Requirements
 
 Each non-functional requirement has a measurable target, so it can be checked rather than judged. The targets are proposed and would need to be agreed with the workshop manager.
 
-| Ref  | Quality        | Requirement                                                                                                    | Refers to     | Priority | Verification                        |
-| ---- | -------------- | -------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ----------------------------------- |
-| NFR1 | Availability   | Staff can record a production update without an internet connection, and it is saved shortly after connecting. | C1, D4        | Must     | Test with the connection turned off |
-| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                             | C2            | Must     | Test each type of user & priveleges |
-| NFR3 | Usability      | After 15 minutes of training, staff can record a production update in under 30 seconds.                        | D4, P5        | Should   | Timed test with 3 staff             |
-| NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                      | S7, FR5, FR10 | Must     | Check 30 sample records             |
-| NFR5 | Performance    | The workshop manager's overview loads within 3 seconds for up to 200 open items.                               | FR11          | Could    | Load test with sample data          |
+| Ref  | Quality        | Requirement                                                                                                      | Refers to     | Priority | Verification                                         |
+| ---- | -------------- | ---------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ---------------------------------------------------- |
+| NFR1 | Availability   | Staff can record a production update without an internet connection, and no updates are lost once it reconnects. | C1, D4        | Must     | Record 20 updates offline and check all 20 are saved |
+| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                               | C2            | Must     | Test each type of user & priveleges                  |
+| NFR3 | Usability      | 9 out of 10 production updates can be recorded in under 30 seconds by staff after a short demonstration.         | D4, P5        | Should   | Timed test with 3 staff                              |
+| NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                        | S7, FR5, FR10 | Must     | Check 30 sample records                              |
+| NFR5 | Performance    | The workshop manager's overview loads as quickly with 200 open items as it does with 10.                         | FR11          | Could    | Compare load time with 10 and 200 sample items       |
 
 <!--NOTE conflicting updates require managers approval -->
+
+The targets are based on the following reasons:
+
+- NFR3 uses 30 seconds, as staff often move on to the next task straight away (P5), so recording an update needs to take less time than walking to the office.
+- NFR5 does not use a fixed time, as the scenario gives no evidence for one. Instead it checks that the overview does not slow down as the number of orders grows, which is the problem the workshop is facing.
 
 ### 4.3 Prioritisation Rationale
 
 Requirements are prioritised using the MoSCoW system. The Must requirements deal with the main problem, conflicting information. Without saving each design version (FR4), recording approval (FR5), stopping unapproved items going into production (FR6), linking changes to price and date (FR7) and tracking committed materials (FR8), staff would still have to rely only on interpretation, which may lead to flaws in the final product. FR9 and NFR1 are Must because the system is only useful if staff can keep it up to date, even when the workshop internet is down
-FR10-12 are marked as Should, as they reduce rework and delivery problems, but the workshop could manage for a short time without them. FR13 is Could, as staff can still pass on progress updates without it, but it helps avoid customers being told dates that later change (P7). Nothing is marked as Wont, but the out of scope items in 2.3 are effectively Wont for this system.
+
+FR2 is marked as Should, as a quotation could still be given as one total price for a short time, even though splitting it makes changes easier to explain. FR10-12 and FR14 are marked as Should, as they reduce rework, delivery and update problems, but the workshop could manage for a short time without them. FR13 is Could, as staff can still pass on progress updates without it, but it helps avoid customers being told dates that later change (P7). Nothing is marked as Wont, but the out of scope items in 2.3 are effectively Wont for this system.
 
 ## 5. Rules and Uncertainty Register
 
@@ -219,8 +232,8 @@ The following business rules are policies the workshop already follows, based on
 
 | Ref | Business rule                                                                                                       | Evidence from scenario                                                                             | Confirmation                                                         |
 | --- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| BR1 | An item cannot go into production until the customer has approved the design.                                       | Staff normally require customer approval before production begins.                                 | Confirmed, but tbe approval criteria is unclear                      |
-| BR2 | An item cannot go into production until a deposit has been paid, unless a different arrangement has been agreed to. | Staff normally require a deposit, but repeat commercial customers can have different arrangements. | Confirmed                                                            |
+| BR1 | An item cannot go into production until the customer has approved the design.                                       | Staff normally require customer approval before production begins.                                 | Confirmed, but tbe approval criteria is unclear (A1, Q1)             |
+| BR2 | An item cannot go into production until a deposit has been paid, unless a different arrangement has been agreed to. | Staff normally require a deposit, but repeat commercial customers can have different arrangements. | Confirmed, with an exception that is not yet clear (A7, Q7)          |
 | BR3 | If a change affects the price or date, the customer must agree to it before work carries on.                        | Customers want to hear about any change to the price or date before more work is done.             | Proposed, as this comes from the customer and is not a stated policy |
 | BR4 | An item cannot be delivered until it has finished curing.                                                           | An item can look finished but may still need several days of curing before delivery.               | Confirmed                                                            |
 | BR5 | Certain machines can only be used by trained staff.                                                                 | Some machines need trained staff.                                                                  | Confirmed                                                            |
@@ -241,15 +254,51 @@ Constraints are shown in 2.5.
 | Ref | Risk                                                                      | Effect                                                                  | Reduction                                                            |
 | --- | ------------------------------------------------------------------------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | R1  | Staff do not keep the system up to date.                                  | The system maintains outdated logs, which makes the main problem worse. | Keep updates quick (NFR3) and allow updates without internet (NFR1). |
-| R2  | Two updates are made to the same item at the same time, or while offline. | The item may show the wrong stage, or one update may be lost.           | Allow workshop manager to approve clashing updates.                  |
+| R2  | Two updates are made to the same item at the same time, or while offline. | The item may show the wrong stage, or one update may be lost.           | Allow workshop manager to approve clashing updates (FR14).           |
 
 ### 5.5 Clarification Questions
+
+The following questions would need to be answered by the workshop before the assumptions can be confirmed. Q1-2 are the most important, as the rule on releasing items to production (FR6) depends on them.
+
+| Ref | Question                                                                                       | Why it matters                                | Who to ask                             |
+| --- | ---------------------------------------------------------------------------------------------- | --------------------------------------------- | -------------------------------------- |
+| Q1  | What counts as enough approval for a quotation, design or later change?                        | Decides when BR1 has been met (A1).           | Workshop manager                       |
+| Q2  | How should partial approval be recorded, and can work start on the parts that are approved?    | Affects A1 and FR5-6.                         | Workshop manager, designer             |
+| Q3  | When is material considered in use or committed to an order?                                   | Affects how free stock is worked out (A2).    | Workshop manager                       |
+| Q4  | Who decides how production priority changes when materials, staff or machines are unavailable? | Affects A3 and FR11.                          | Workshop manager                       |
+| Q5  | When is a multi-item order complete, and when can partial delivery be offered?                 | Affects A4 and FR12.                          | Workshop manager, delivery coordinator |
+| Q6  | Which progress and date information can be passed on to customers before it is confirmed?      | Affects A5 and FR13.                          | Workshop manager                       |
+| Q7  | What deposit and approval arrangements apply to repeat commercial customers?                   | Affects the exception in BR2 (A7).            | Workshop manager                       |
+| Q8  | How should prices and deposit details be passed to accounting?                                 | Affects D2 and A6.                            | Workshop manager                       |
+| Q9  | Who can accept a change from the approved design or sign off rework?                           | Affects who can record a decision (A8, FR10). | Workshop manager                       |
 
 ## 6. Use-Case Model
 
 ### 6.1 Use-Case Diagram
 
+Use case UML diagram can be seen in the "diagrams" folder (use-case-model.puml and use-case-model.png).
+
 ### 6.2 Use-Case Catalogue
+
+The following use cases are based on the actor goals in 3.4. Each one is a full task, not a single step such as logging in.
+
+| Ref  | Use case                   | Primary actor                           | Refers to | Requirement |
+| ---- | -------------------------- | --------------------------------------- | --------- | ----------- |
+| UC1  | Record Enquiry             | Designer                                | AG1       | FR1         |
+| UC2  | Prepare Quotation          | Designer                                | AG1       | FR2         |
+| UC3  | Create Order               | Designer (accounting system supporting) | AG1       | FR3         |
+| UC4  | Create Design Version      | Designer                                | AG2       | FR4         |
+| UC5  | Record Approval            | Designer                                | AG3       | FR5         |
+| UC6  | Record Change              | Designer                                | AG4       | FR7         |
+| UC7  | Commit Materials           | Workshop manager                        | AG5       | FR8         |
+| UC8  | Release Item to Production | Workshop manager                        | AG12      | FR6         |
+| UC9  | Record Production Stage    | Production worker, finisher             | AG7-8     | FR9         |
+| UC10 | Record Quality Check       | Production worker                       | AG9       | FR10        |
+| UC11 | Review Workshop Progress   | Workshop manager                        | AG6       | FR11        |
+| UC12 | Plan Delivery              | Delivery coordinator                    | AG10      | FR12        |
+| UC13 | Pass On Confirmed Progress | Workshop manager                        | AG11      | FR13        |
+
+Every change in UC6 creates a new design version (UC4), which then must be approved (UC5). Release to production (UC8) is kept separate from approval (UC5), as it is carried out by a different actor and also depends on the deposit (BR2).
 
 ### 6.3 Detailed Use Case
 
@@ -257,7 +306,20 @@ Constraints are shown in 2.5.
 
 ### 7.1 Scenario Overview
 
+The following scenarios show how the system should behave for the most important rules. They cover a successful case, a failure case and a boundary case, and use the same words as the scenario rather than describing screens or buttons.
+
+| Ref | Scenario                                                    | Type     | Refers to           |
+| --- | ----------------------------------------------------------- | -------- | ------------------- |
+| GH1 | An item with full approval and a deposit is released        | Success  | FR6, BR1-2, UC8     |
+| GH2 | An item with only partial approval cannot be released       | Rule     | FR5-6, BR1, A1, UC8 |
+| GH3 | A change to the price pauses work until the customer agrees | Rule     | FR7, BR3, UC6       |
+| GH4 | A rejected change keeps the previous approved version       | Failure  | FR4, FR7, UC6       |
+| GH5 | Curing must finish before an item is delivered              | Boundary | FR12, BR4, C4, UC12 |
+
 ### 7.2 Feature Files
+
+Feature files can be found in "features" folder.
+release-to-produduction.feature covers GH1-2
 
 ## 8. Candidate-Concept Analysis
 
@@ -287,7 +349,7 @@ Constraints are shown in 2.5.
 
 ### 11.3 Limitations and Unresolved Questions
 
-## 12. AI Declaration
+## 12. AI Declaration"
 
 ### 12.1 Tools and Use
 
@@ -301,11 +363,13 @@ Usage:
 - Clarifying details regarding the system, requirements of the report and marking criteria.
 - Showing how to create markdown tables and general help with markdown formatting.
 - General help with explaining course material
+- Pointing out inconsistent phrasing & referencing and grammatical errors
 
 Other Tools used:
 
 - Zed (Text editor)
 - Github desktop (version control)
+- plantuml.com (for drafting & writing uml, cropped screenshot of use case diagram is taken from the site)
 
 ### 12.2 Verification
 

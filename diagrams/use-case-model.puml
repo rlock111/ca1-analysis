@@ -1,0 +1,48 @@
+@startuml use-case-model
+left to right direction
+
+actor "Designer" as Designer
+actor "Workshop Manager" as Manager
+actor "Production Worker" as Worker
+actor "Finisher" as Finisher
+actor "Delivery Coordinator" as Delivery
+actor "Accounting System" as Accounting
+
+rectangle "Workshop Order System" {
+  usecase "UC1 Record Enquiry" as UC1
+  usecase "UC2 Prepare Quotation" as UC2
+  usecase "UC3 Create Order" as UC3
+  usecase "UC4 Create Design Version" as UC4
+  usecase "UC5 Record Approval" as UC5
+  usecase "UC6 Record Change" as UC6
+  usecase "UC7 Commit Materials" as UC7
+  usecase "UC8 Release Item to Production" as UC8
+  usecase "UC9 Record Production Stage" as UC9
+  usecase "UC10 Record Quality Check" as UC10
+  usecase "UC11 Review Workshop Progress" as UC11
+  usecase "UC12 Plan Delivery" as UC12
+  usecase "UC13 Pass On Confirmed Progress" as UC13
+}
+
+Designer --> UC1
+Designer --> UC2
+Designer --> UC3
+Designer --> UC4
+Designer --> UC5
+Designer --> UC6
+
+Manager --> UC7
+Manager --> UC8
+Manager --> UC11
+Manager --> UC13
+
+Worker --> UC9
+Worker --> UC10
+
+Finisher --> UC9
+
+Delivery --> UC12
+
+UC3 --> Accounting
+
+@enduml
