@@ -320,6 +320,8 @@ The following scenarios show how the system should behave for the most important
 
 Feature files can be found in "features" folder.
 release-to-produduction.feature covers GH1-2
+record-change.feature covers GH3-4
+delivery-after-curing.feature covers GH5
 
 ## 8. Candidate-Concept Analysis
 
@@ -349,7 +351,7 @@ release-to-produduction.feature covers GH1-2
 
 ### 11.3 Limitations and Unresolved Questions
 
-## 12. AI Declaration"
+## 12. AI Declaration
 
 ### 12.1 Tools and Use
 
