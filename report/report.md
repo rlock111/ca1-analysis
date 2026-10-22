@@ -17,10 +17,10 @@ Enquiries, quotations, sketches, material lists and production updates are held 
 The main problem is conflicting information. As the design progresses, particularly on custom orders, new specifications or designs may be drafted or required, these logs are spread across emails, folders and spreadsheets that do not always match the latest specifications.
 Staff find it difficult to identify:
 
-- which design is the current approved veersion
-- what materials are already committed to other orders
-- what stage each item is at in production
-- when the order is realistically going to be finished.
+- Which design is the current approved version
+- What materials are already committed to other orders
+- What stage each item is at in production
+- When the order is realistically going to be finished.
   The current process relies on interpretation by staff, which can potentially lead to flaws in the product if a previous plan or outdated information is used instead of the latest version.
 
 ### 1.4 Consequences
@@ -81,9 +81,9 @@ The workshop order system will give Dingle Bay Furniture Workshop a record of ea
 
 The scenario states that detailed CAD, payroll, accounting and machine-control systems are outside the scope. The following are also assumed out of scope, as they go beyond order and production coordination:
 
-- buying materials from suppliers (the system only records that material has been ordered)
-- taking payments from customers (the system only records whether a deposit has been paid)
-- planning the order of work (the system supports the weekly planning meeting, but staff still decide).
+- Buying materials from suppliers (the system only records that material has been ordered)
+- Taking payments from customers (the system only records whether a deposit has been paid)
+- Planning the order of work (the system supports the weekly planning meeting, but staff still decide).
 
 ### 2.4 Dependencies
 
@@ -109,7 +109,7 @@ The following constraints affect how the system works:
 
 ### 2.6 Assumptions
 
-These are assumptions based on non confirmed information. Most come from the unclear points in 1.6, and each one refers to the part of the scope (2.2) or dependencies (2.4) that it affects.
+These are assumptions based on unconfirmed information. Most come from the unclear points in 1.6, and each one refers to the part of the scope (2.2) or dependencies (2.4) that it affects.
 
 | Ref | Assumption                                                                                                            | Reason                                                                                                         | Refers to |
 | --- | --------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | --------- |
@@ -126,19 +126,20 @@ These are assumptions based on non confirmed information. Most come from the unc
 
 ### 3.1 Stakeholder Catalogue
 
-The following stakeholders are affected by the system. SH1-5 are direct stakeholders, as they use the system themselves. SH6-7 are indirect stakeholders, as they do not use the system but are affected by the information staff pass on to them. SH8-9 are external to the workshop. Influence shows how much each stakeholder shapes what the system needs to do.
+The following stakeholders are affected by the system. SH1-5 are direct stakeholders, as they use the system themselves. SH6-7 are indirect stakeholders, as they do not use the system but are affected by the information staff pass on to them. SH8-10 are external to the workshop. Influence shows how much each stakeholder shapes what the system needs to do.
 
-| Ref | Stakeholder                | Type     | What they require                                                                                                      | Concern (from scenario)                                                                   | Influence |
-| --- | -------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | --------- |
-| SH1 | Workshop manager           | Direct   | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.             | High      |
-| SH2 | Designer                   | Direct   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.        | High      |
-| SH3 | Cabinetmaker               | Direct   | Up to date drawings and instructions, and a simple way to record progress, as not every item follows the same process. | Not every item goes through the same production steps.                                    | Medium    |
-| SH4 | Finisher                   | Direct   | A way of showing an item is still curing, so it is not treated as ready for delivery too early.                        | An item can look finished but may still need several days of curing before delivery.      | Medium    |
-| SH5 | Delivery coordinator       | Direct   | To know which items are ready, so that full or partial deliveries can be planned.                                      | One item in an order may be finished while another still needs rework.                    | Medium    |
-| SH6 | Customer                   | Indirect | A clear quotation, and to be told about any change to the price or date before more work is done.                      | Customers expect to be told before work carries on if a change affects the price or date. | High      |
-| SH7 | Repeat commercial customer | Indirect | The same as other customers, although their approval and deposit arrangements may be different.                        | The scenario says they may have different arrangements, but not what they are.            | Medium    |
-| SH8 | Material suppliers         | External | Clear orders for timber, sheet material, hardware and finishes.                                                        | Material delays often change the order work is done in.                                   | Low       |
-| SH9 | Accounting (assumed)       | External | The approved prices and whether a deposit has been paid.                                                               | Accounting is out of scope, and how it receives information is not clear (D2, A6).        | Low       |
+| Ref  | Stakeholder                | Type     | What they require                                                                                                      | Concern (from scenario)                                                                                                                   | Influence |
+| ---- | -------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------- |
+| SH1  | Workshop manager           | Direct   | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.                                                             | High      |
+| SH2  | Designer                   | Direct   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.                                                        | High      |
+| SH3  | Cabinetmaker               | Direct   | Up to date drawings and instructions, and a simple way to record progress, as not every item follows the same process. | Not every item goes through the same production steps.                                                                                    | Medium    |
+| SH4  | Finisher                   | Direct   | A way of showing an item is still curing, so it is not treated as ready for delivery too early.                        | An item can look finished but may still need several days of curing before delivery.                                                      | Medium    |
+| SH5  | Delivery coordinator       | Direct   | To know which items are ready, so that full or partial deliveries can be planned.                                      | One item in an order may be finished while another still needs rework.                                                                    | Medium    |
+| SH6  | Customer                   | Indirect | A clear quotation, and to be told about any change to the price or date before more work is done.                      | Customers expect to be told before work carries on if a change affects the price or date.                                                 | High      |
+| SH7  | Repeat commercial customer | Indirect | The same as other customers, although their approval and deposit arrangements may be different.                        | The scenario says they may have different arrangements, but not what they are.                                                            | Medium    |
+| SH8  | Material suppliers         | External | Clear orders for timber, sheet material, hardware and finishes.                                                        | Material delays often change the order work is done in.                                                                                   | Low       |
+| SH9  | Accounting (assumed)       | External | The approved prices and whether a deposit has been paid.                                                               | Accounting is out of scope, and how it receives information is not clear (D2, A6).                                                        | Low       |
+| SH10 | Data protection (assumed)  | External | Customer personal details handled lawfully, and payment details only seen by staff who need them.                      | Not named in the scenario, but it applies to any business holding customer details, and workshop staff may not need payment details (C2). | Medium    |
 
 ### 3.2 Actors
 
@@ -155,7 +156,7 @@ CAD software is not an actor, as the designer attaches the drawings and the CAD 
 
 ### 3.3 Offstage Stakeholders
 
-Some stakeholders do not use the system but still affect what it needs to do. Material suppliers are an offstage stakeholder. Supplier delays are the reason expected completion dates can change. Customers (SH6-7) are also offstage stakeholders, as they do not use the system directly. Staff pass progress updates on to them, which is why only confirmed dates should be shared (A5).
+Some stakeholders do not use the system but still affect what it needs to do. Material suppliers and data protection (SH10) are offstage stakeholders. Supplier delays are the reason expected completion dates can change, and data protection is the reason workshop staff should not see customer payment details (C2, NFR2). Customers (SH6-7) are also offstage stakeholders, as they do not use the system directly. Staff pass progress updates on to them, which is why only confirmed dates should be shared (A5).
 
 ### 3.4 Actor-Goal Catalogue
 
@@ -206,7 +207,7 @@ Each non-functional requirement has a measurable target, so it can be checked ra
 | Ref  | Quality        | Requirement                                                                                                      | Refers to     | Priority | Verification                                         |
 | ---- | -------------- | ---------------------------------------------------------------------------------------------------------------- | ------------- | -------- | ---------------------------------------------------- |
 | NFR1 | Availability   | Staff can record a production update without an internet connection, and no updates are lost once it reconnects. | C1, D4        | Must     | Record 20 updates offline and check all 20 are saved |
-| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                               | C2            | Must     | Test each type of user & priveleges                  |
+| NFR2 | Security       | Production workers cannot see customer payment or deposit details.                                               | C2, SH10      | Must     | Test each type of user & privileges                  |
 | NFR3 | Usability      | 9 out of 10 production updates can be recorded in under 30 seconds by staff after a short demonstration.         | D4, P5        | Should   | Timed test with 3 staff                              |
 | NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                        | S7, FR5, FR10 | Must     | Check 30 sample records                              |
 | NFR5 | Performance    | The workshop manager's overview loads as quickly with 200 open items as it does with 10.                         | FR11          | Could    | Compare load time with 10 and 200 sample items       |
@@ -222,17 +223,17 @@ The targets are based on the following reasons:
 
 Requirements are prioritised using the MoSCoW system. The Must requirements deal with the main problem, conflicting information. Without saving each design version (FR4), recording approval (FR5), stopping unapproved items going into production (FR6), linking changes to price and date (FR7) and tracking committed materials (FR8), staff would still have to rely only on interpretation, which may lead to flaws in the final product. FR9 and NFR1 are Must because the system is only useful if staff can keep it up to date, even when the workshop internet is down
 
-FR2 is marked as Should, as a quotation could still be given as one total price for a short time, even though splitting it makes changes easier to explain. FR10-12 and FR14 are marked as Should, as they reduce rework, delivery and update problems, but the workshop could manage for a short time without them. FR13 is Could, as staff can still pass on progress updates without it, but it helps avoid customers being told dates that later change (P7). Nothing is marked as Wont, but the out of scope items in 2.3 are effectively Wont for this system.
+FR2 is marked as Should, as a quotation could still be given as one total price for a short time, even though splitting it makes changes easier to explain. FR10-12 and FR14 are marked as Should, as they reduce rework, delivery and update problems, but the workshop could manage for a short time without them. FR13 is Could, as staff can still pass on progress updates without it, but it helps avoid customers being told dates that later change (P7). Nothing is marked as Won't, but the out of scope items in 2.3 are effectively Won't for this system.
 
 ## 5. Rules and Uncertainty Register
 
 ### 5.1 Business Rules
 
-The following business rules are policies the workshop already follows, based on the scenario. Some are only partialy confirmed, as the scenario does not give every detail.
+The following business rules are policies the workshop already follows, based on the scenario. Some are only partially confirmed, as the scenario does not give every detail.
 
 | Ref | Business rule                                                                                                       | Evidence from scenario                                                                             | Confirmation                                                         |
 | --- | ------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| BR1 | An item cannot go into production until the customer has approved the design.                                       | Staff normally require customer approval before production begins.                                 | Confirmed, but tbe approval criteria is unclear (A1, Q1)             |
+| BR1 | An item cannot go into production until the customer has approved the design.                                       | Staff normally require customer approval before production begins.                                 | Confirmed, but the approval criteria is unclear (A1, Q1)             |
 | BR2 | An item cannot go into production until a deposit has been paid, unless a different arrangement has been agreed to. | Staff normally require a deposit, but repeat commercial customers can have different arrangements. | Confirmed, with an exception that is not yet clear (A7, Q7)          |
 | BR3 | If a change affects the price or date, the customer must agree to it before work carries on.                        | Customers want to hear about any change to the price or date before more work is done.             | Proposed, as this comes from the customer and is not a stated policy |
 | BR4 | An item cannot be delivered until it has finished curing.                                                           | An item can look finished but may still need several days of curing before delivery.               | Confirmed                                                            |
@@ -319,7 +320,7 @@ The following scenarios show how the system should behave for the most important
 ### 7.2 Feature Files
 
 Feature files can be found in "features" folder.
-release-to-produduction.feature covers GH1-2
+release-to-production.feature covers GH1-2
 record-change.feature covers GH3-4
 delivery-after-curing.feature covers GH5
 
@@ -327,9 +328,57 @@ delivery-after-curing.feature covers GH5
 
 ### 8.1 Candidate Extraction
 
+Candidate concepts were taken from the nouns used in the scenario (E.G customer, enquiry, quotation, order, design, approval, material and delivery). Each concept was then checked to see whether it should become a class in the domain model.
+
+Some nouns were clear to keep, as they have their own details and history, such as an order or a quotation. Other nouns were less clear. For example, “design” and “design version” could be seen as two separate things, but the scenario shows that a design changes over time particularly on custom orders. It makes more sense to treat every design as a particular version.
+Nouns that describe how the work is recorded, such as emails and spreadsheets, were also listed, as they appear often in the scenario, but they were removed as they are not part of the business itself.
+
 ### 8.2 Classification and Decisions
 
+Each candidate was first classified as a class, attribute, actor, operation or out of scope. A decision was then made to keep, merge, convert or remove it, with three criteria. If it has its own information and history, if it holds information that does not exist anywhere else, is it part of the workshop's business, or just part of how the work is recorded?
+
+| Candidate                                                     | Classification | Decision                              | Reason                                                                        |
+| ------------------------------------------------------------- | -------------- | ------------------------------------- | ----------------------------------------------------------------------------- |
+| Customer                                                      | Class          | Keep                                  | Places orders and has their own details.                                      |
+| Household, café, office, community organisation               | Attribute      | Merge into Customer (customer type)   | They are all customers, just different types.                                 |
+| Enquiry                                                       | Class          | Keep                                  | Exists before a quotation and has its own details.                            |
+| Quotation                                                     | Class          | Keep                                  | Can be updated and becomes an order.                                          |
+| Order                                                         | Class          | Keep                                  | Groups several items together.                                                |
+| Item                                                          | Class          | Keep as OrderItem                     | Status is recorded for each item (A4).                                        |
+| Standard product                                              | Class          | Keep as Product                       | The same product can be ordered many times.                                   |
+| Design                                                        | Class          | Merge into DesignVersion              | A design always means a particular version.                                   |
+| Design version                                                | Class          | Keep as DesignVersion                 | Central to the main problem (P1).                                             |
+| Approval                                                      | Class          | Keep                                  | Records full or partial approval, the date and who recorded it (FR5).         |
+| Change                                                        | Class          | Keep                                  | Links two design versions and their effect on price and date (P3).            |
+| Material (timber, sheet material, hardware, adhesive, finish) | Class          | Keep                                  | Several orders may use the same material, so it needs its own record (P4).    |
+| Stock                                                         | Attribute      | Convert to attribute of Material      | Stock is a quantity, not a separate thing.                                    |
+| Material commitment                                           | Class          | Keep as MaterialCommitment            | The committed amount belongs to neither the material nor the item alone (P4). |
+| Production stage                                              | Class          | Keep as ProductionStage               | Has a status and a reason for any pause.                                      |
+| Curing                                                        | Attribute      | Convert to a type of ProductionStage  | Curing is one of the stages an item goes through (C4).                        |
+| Quality check                                                 | Class          | Keep as QualityCheck                  | Records the outcome and who made the decision (FR10).                         |
+| Rework                                                        | Attribute      | Convert to an outcome of QualityCheck | Rework is a result of a check.                                                |
+| Deposit                                                       | Attribute      | Convert to attribute of Order         | Taking payments is out of scope (2.3), so only the deposit status is kept.    |
+| Delivery                                                      | Class          | Keep                                  | Can be full or partial (P6).                                                  |
+| Designer, cabinetmaker, finisher, manager                     | Actor          | Merge into StaffMember                | Actors in the use case model, but also needed to record who made a decision.  |
+| Approve, commit, release, deliver                             | Operation      | Remove                                | These are actions, which belong in the use cases rather than as classes.      |
+| Machine                                                       | Out of scope   | Remove                                | Machine control is out of scope.                                              |
+| Email, job folder, spreadsheet, whiteboard                    | Out of scope   | Remove                                | These are how the work is recorded, not part of the business itself.          |
+| Supplier                                                      | Out of scope   | Remove                                | Buying materials is out of scope (2.3).                                       |
+
 ### 8.3 Glossary
+
+| Term               | Meaning                                                                             |
+| ------------------ | ----------------------------------------------------------------------------------- |
+| Enquiry            | A customer's first request, before a price is given.                                |
+| Quotation          | A price given for an enquiry, which may be changed later.                           |
+| Order              | An accepted quotation, which can contain several items.                             |
+| Order item         | One piece of furniture in an order. Status is recorded for each item.               |
+| Design version     | A numbered version of an item's design, which is never changed once saved.          |
+| Approval           | A customer agreeing to all or part of a design version.                             |
+| Change             | A move from one design version to another, with its effect on price and date.       |
+| Committed material | Material assigned to an order item, which is no longer free for other jobs.         |
+| Production stage   | One step of production that an item goes through, e.g cutting, finishing or curing. |
+| Partial delivery   | A delivery with some, but not all of the items in an order.                         |
 
 ## 9. Domain Model
 
@@ -370,8 +419,8 @@ Usage:
 Other Tools used:
 
 - Zed (Text editor)
-- Github desktop (version control)
-- plantuml.com (for drafting & writing uml, cropped screenshot of use case diagram is taken from the site)
+- GitHub desktop (version control)
+- PlantUML website, plantuml.com (for drafting & writing UML, cropped screenshot of use case diagram is taken from the site)
 
 ### 12.2 Verification
 
