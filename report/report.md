@@ -301,6 +301,45 @@ Every change in UC6 creates a new design version (UC4), which then must be appro
 
 ### 6.3 Detailed Use Case
 
+UC6 has been chosen as the detailed use case, as it deals directly with the main problem (conflicting information), where changes are not linked to a design version, price or date (P1, P3).
+
+| Element                    | Description                                                                                                                                                                                                                                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Use case                   | UC6 Record Change                                                                                                                                                                                                                          |
+| Scope                      | Workshop order system                                                                                                                                                                                                                      |
+| Level                      | User goal                                                                                                                                                                                                                                  |
+| Primary actor              | Designer                                                                                                                                                                                                                                   |
+| Stakeholders and interests | Customer, who wants to be told about any change to the price or date before more work is done. Workshop manager, who needs materials and dates to stay accurate. Production worker, who should only work from the latest approved version. |
+| Preconditions              | The item exists and has at least one approved design version.                                                                                                                                                                              |
+| Trigger                    | The customer asks for a change, or staff find that part of the design is not practical.                                                                                                                                                    |
+
+The main success scenario is as follows:
+
+1. The designer identifies the item and describes the change.
+2. The system shows the current approved version, the stage the item is at and any committed materials.
+3. The designer creates a new design version with the change (UC4).
+4. The designer records how the change affects the price and completion date.
+5. The system links the change to the old and new versions and records the new price and date.
+6. The system pauses any affected production stages until the customer responds (BR3).
+7. The designer records that the customer has agreed to the change (UC5).
+8. The system makes the new version the latest approved version, updates the price and date, and removes the pause.
+
+The following extensions show what happens when the flow changes at a step:
+
+- 4a. The change does not affect the price or date. The designer records that there is no effect, nothing is paused, and the use case resumes at step 7.
+- 5a. Materials already committed to the item no longer suit the new version. The system flags the materials for the workshop manager to check (UC7), and the use case resumes at step 6.
+- 6a. The item is not in production yet. There is nothing to pause, and the use case resumes at step 7.
+- 7a. The customer only agrees to part of the change. The designer records which parts are approved, the item stays paused (A1), and the use case resumes at step 3 for the rest of the change.
+- 7b. The customer does not agree to the change. The designer records the change as rejected, the previous version stays as the latest approved version, the price and date stay the same, the pause is removed, and the use case ends.
+
+| Element              | Description                                                                                                                                                                           |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Minimal guarantee    | The previous approved version stays in use, and the price and date do not change.                                                                                                     |
+| Success guarantee    | There is one latest approved version, the change is linked to both versions with its effect on price and date, and the customer's response is recorded with who recorded it and when. |
+| Special requirements | Every change and approval records who made it and when (NFR4).                                                                                                                        |
+| Open issues          | What counts as the customer agreeing to a change (Q1), and whether work can carry on for the parts that are approved (Q2).                                                            |
+| Related              | FR4-5, FR7, BR3, A1, GH3-4                                                                                                                                                            |
+
 ## 7. Gherkin Examples
 
 ### 7.1 Scenario Overview
@@ -407,7 +446,31 @@ Machines and suppliers are not shown, as machine control and buying materials ar
 
 ### 10.1 Matrix
 
+The following table shows how each requirement links back to a problem and goal, and to a use case, scenario and class in the domain model.
+
+| Problem | Goal  | Requirement | Rule  | Use case    | Scenario | Class                                       |
+| ------- | ----- | ----------- | ----- | ----------- | -------- | ------------------------------------------- |
+| P2      | AG1   | FR1         | -     | UC1         | -        | Enquiry, Customer                           |
+| P2      | AG1   | FR2         | BR6   | UC2         | -        | Quotation                                   |
+| P2      | AG1   | FR3         | -     | UC3         | -        | Order, OrderItem                            |
+| P1      | AG2   | FR4         | -     | UC4         | GH4      | DesignVersion                               |
+| P1      | AG3   | FR5         | BR1   | UC5         | GH2      | Approval                                    |
+| P1      | AG12  | FR6         | BR1-2 | UC8         | GH1-2    | OrderItem, Approval                         |
+| P3      | AG4   | FR7         | BR3   | UC6         | GH3-4    | Change                                      |
+| P4      | AG5   | FR8         | -     | UC7         | -        | Material, MaterialCommitment                |
+| P5      | AG7-8 | FR9         | BR4   | UC9         | -        | ProductionStage                             |
+| -       | AG9   | FR10        | -     | UC10        | -        | QualityCheck, StaffMember                   |
+| P7      | AG6   | FR11        | -     | UC11        | -        | OrderItem                                   |
+| P6      | AG10  | FR12        | BR4   | UC12        | GH5      | Delivery                                    |
+| P7      | AG11  | FR13        | -     | UC13        | -        | OrderItem                                   |
+| P5      | AG6   | FR14        | -     | UC11        | -        | ProductionStage, StaffMember                |
+| C1      | AG7   | NFR1        | -     | UC9         | -        | ProductionStage                             |
+| C2      | -     | NFR2        | -     | -           | -        | StaffMember                                 |
+| -       | -     | NFR4        | -     | UC5-6, UC10 | -        | Approval, Change, QualityCheck, StaffMember |
+
 ### 10.2 Gaps and Notes
+
+Every Must requirement links to a problem or constraint, a use case and a class, so none of them are isolated. Not every requirement has a Gherkin scenario.
 
 ## 11. Reflection
 
@@ -425,9 +488,20 @@ Overall, I am happy with how the report has progresssed and I have gained a lot 
 
 ### 11.1 Key Decisions
 
+An important decision I made was treating customers as offstage stakeholders rather than actors, the scenario never says customers would use the system, and staff want to keep communicating with customers directly. I had originally considered adding customers to actors table but after checking the definition for actors in the lectures, I decided against it (actors must directly interact with the system), adding them to 3.3 as an offstage stakeholder.
+
+I thought about using CAD system as an actor, but I decided against it as the designer attaches drawings.
+
 ### 11.2 Revisions
 
+After re-reading the brief and following subheadings, I restructured section 1 and repurposed the text that I had first written in section 2 as I did not exactly understand what was required at first.
+I asked AI to point out inconsistencies in phrasing and logic with my report and the document and revised to reflect the document or schema better (e.g. The word bottlenecks instead of problems). Although my example is a very small change, changing phrasing inconsistencies ensures that my report is accurate to the specification.
+
 ### 11.3 Limitations and Unresolved Questions
+
+A big limitation is that several parts of the report depend on answers from the workshop manager, in particular Q1-2 on what counts as customer approval and whether partial approval is enough, it is still vague how partial approval can be measured and if work can progress
+
+The non functional requirement targets are also proposed and my own interpretation rather than taken from the scenario, and BR3 is only proposed, as it comes from what the customer wants rather than a stated policy.
 
 ## 12. AI Declaration
 
@@ -447,6 +521,7 @@ Usage:
 - Clarifying details regarding the system, requirements of the report and marking criteria.
 - Showing how to create markdown tables and general help with markdown formatting.
 - General help with explaining course material
+- Help explaining what is required for certain sections, asking for recommendations based on what I have written
 - Pointing out inconsistent phrasing & referencing and grammatical errors
 
 Other Tools used:
@@ -457,8 +532,11 @@ Other Tools used:
 
 ### 12.2 Verification
 
+A good example of my verification process is with the suggestion of the data protection stakeholder,
+Upon asking for missing details in stakeholder catalog, AI suggested adding data protection, I checked if data protection was mentioned in the document, and used my own judgement to decide against adding it in, I then changed my mind on excluding data protection when I was looking over the lectures and saw data protection being used.
+This example shows how I checked and ensured accuracy with the document, my thought process and using my own judgement whenever AI was used.
+
 ### 12.3 Changed or Rejected Suggestions
 
-## References
-
-## Appendices
+- AI suggested time limits for testing metrics, I used them for NFR1 and NFR5 before removing as I did not believe that time was the best testing metric for these requirements
+- AI suggested accounting and data protection as stakeholders, I used accounting originally and decided against data protection but after reconsidering decided I to add data protection as it was included when I rechecked the lectures (mentioned in 12.2)

@@ -43,7 +43,15 @@ I asked for AI to fix spelling mistakes, it had already shown them to me before 
 | 21 Oct | Asked AI to suggest feedback on the general direction my report        | AI suggested to add Type and Influence to 3.1, suggested A8, FR14, suggested a better way of measuring NFR1, suggested to change MoSCoW priorities as I the majority were marked as Must, and matched terms e.g "committed materials" across sections | Checked each suggestion against the scenario and my previous commit, used my own judgement before editing and committing |
 | 22 Oct | Asked AI point out spelling mistakes and typos                         | AI printed the markdown content without the spelling mistakes                                                                                                                                                                                         | Copied and pasted the revised report, checked what was changed against previous commit                                   |
 
+## Stakeholder Catalog
+
+AI first suggested data protection (GDPR) as an external stakeholder in when asking about section 3. It is not mentioned in the scenario, so I had to decide whether to include it or not.
+
+| Date   | Prompt information                                                              | AI response (summary)                                                                                                                                                       | My usage                                                                                                                |
+| ------ | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 15 Oct | Asked AI to review my 3.1 section to see if I was missing any important details | AI gave several ideas on what can be added which included accounting and data protection as an external stakeholder, linked to staff not being able to view payment details | Added accounting, originally decided against adding data protection, but after rethinking, I decided to add it in later |
+
 ## Rejected AI Proposals
 
-I asked AI for information about Non Functional Requirements, it recommended that I use a time constraint as a testing metric, I originally decided to use a time constraint as a testing metric for NFR1 & NFR5 but changed both shortly after as I did not believe it was the most efficient way of verification in these cases.
+I asked AI for information about non functional requirements formatting, it recommended that I use a time constraint as a testing metric, I originally decided to use a time constraint as a testing metric for NFR1 & NFR5 but changed both shortly after as I did not believe it was the most efficient way of verification in these cases.
 I used a time constraint for NFR3 as I believed it was a good way of measuring how much effort and time is required to make an update.
