@@ -45,4 +45,5 @@ I asked for AI to fix spelling mistakes, it had already shown them to me before 
 
 ## Rejected AI Proposals
 
-I asked AI for information about Non Functional Requirements, it recommended that I use a time constraint as a testing metric, I originally decided to use a time constraint as a testing metric for NFR1 & NFR5 but changed both shortly after as I did not believe it was the most efficient way of verification.
+I asked AI for information about Non Functional Requirements, it recommended that I use a time constraint as a testing metric, I originally decided to use a time constraint as a testing metric for NFR1 & NFR5 but changed both shortly after as I did not believe it was the most efficient way of verification in these cases.
+I used a time constraint for NFR3 as I believed it was a good way of measuring how much effort and time is required to make an update.

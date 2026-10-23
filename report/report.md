@@ -128,7 +128,7 @@ These are assumptions based on unconfirmed information. Most come from the uncle
 
 The following stakeholders are affected by the system. SH1-5 are direct stakeholders, as they use the system themselves. SH6-7 are indirect stakeholders, as they do not use the system but are affected by the information staff pass on to them. SH8-10 are external to the workshop. Influence shows how much each stakeholder shapes what the system needs to do.
 
-| Ref  | Stakeholder                | Type     | What they require                                                                                                      | Concern (from scenario)                                                                                                                   | Influence |
+| Ref  | Stakeholder                | Type     | What they require                                                                                                      | Concern                                                                                                                                   | Influence |
 | ---- | -------------------------- | -------- | ---------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | --------- |
 | SH1  | Workshop manager           | Direct   | Reliable information on orders, design versions, materials and work in progress, as well as any rework or delays.      | Stock that looks available may already be set aside for several other orders.                                                             | High      |
 | SH2  | Designer                   | Direct   | To be sure they are working from the latest approved design, and to see how a change affects the price and date.       | The most recent email about a design may not be the version the customer approved.                                                        | High      |
@@ -211,8 +211,6 @@ Each non-functional requirement has a measurable target, so it can be checked ra
 | NFR3 | Usability      | 9 out of 10 production updates can be recorded in under 30 seconds by staff after a short demonstration.         | D4, P5        | Should   | Timed test with 3 staff                              |
 | NFR4 | Accountability | Every approval, change and quality decision records who made it and when.                                        | S7, FR5, FR10 | Must     | Check 30 sample records                              |
 | NFR5 | Performance    | The workshop manager's overview loads as quickly with 200 open items as it does with 10.                         | FR11          | Could    | Compare load time with 10 and 200 sample items       |
-
-<!--NOTE conflicting updates require managers approval -->
 
 The targets are based on the following reasons:
 
@@ -320,8 +318,11 @@ The following scenarios show how the system should behave for the most important
 ### 7.2 Feature Files
 
 Feature files can be found in "features" folder.
+
 release-to-production.feature covers GH1-2
+
 record-change.feature covers GH3-4
+
 delivery-after-curing.feature covers GH5
 
 ## 8. Candidate-Concept Analysis
@@ -384,7 +385,23 @@ Each candidate was first classified as a class, attribute, actor, operation or o
 
 ### 9.1 Domain Model Diagram
 
+The domain model shows the classes that were kept in 8.2, along with their main attributes and how they are linked. The puml file and screenshot of diagram are kept in the /diagrams folder ("domain-model.puml" & "domain-model.png")
+
 ### 9.2 Modelling Rationale
+
+The domain model has 15 classes, which come from the classes that were kept in 8.2. It only shows attributes and named associations with multiplicity, and does not show methods, IDs used to link classes or any screen or database details, as it only describes the business, not the software.
+
+- An Order contains one or more OrderItems. Status is recorded on each OrderItem, and the status of the whole order is worked out from its items (A4), which deals with P6. The order's status is not shown as an attribute, as it comes from the items rather than being recorded separately.
+- An OrderItem can have many DesignVersions, and each new version replaces the one before it. This keeps a complete design history (FR4) and deals with the main problem of knowing which version is approved (P1).
+- Approval is its own class rather than an attribute, as it records whether the approval is full or partial, the date and who recorded it (FR5).
+- A Change is linked to two DesignVersions, the one it changes and the one it creates, so each change to the price or date is tied to a version (P3, FR7). Each change also records who made it and when (NFR4).
+- MaterialCommitment is an association class between OrderItem and Material, as the committed quantity belongs to the link between them rather than to either one alone (P4). Free stock is not shown as an attribute, as it is worked out from the quantity held minus the commitments (FR8).
+- A Delivery can contain one or more OrderItems, and an item can be part of more than one delivery, which allows for partial deliveries (FR12).
+- StaffMember is linked to Approval, Change, QualityCheck and ProductionStage, so it is always clear who made a decision (NFR4).
+
+Enquiry and Quotation have more attributes than the other classes, as FR1 and FR2 list the details that need to be recorded. Dimensions and finish appear in both Enquiry and DesignVersion on purpose, as Enquiry holds what the customer asked for, while DesignVersion holds what was actually designed, which may be different.
+
+Machines and suppliers are not shown, as machine control and buying materials are out of scope (2.3). Payments are also left out, and only whether a deposit has been paid is recorded on the Order.
 
 ## 10. Traceability Matrix
 
@@ -394,6 +411,18 @@ Each candidate was first classified as a class, attribute, actor, operation or o
 
 ## 11. Reflection
 
+In writing this report, I learned a lot about detailing a system as it was a hands on report and required me to write using many concepts and techniques that I never used in previous work. I find that I learn best from experience, and as many of these concepts are theoretical, they are taught in most modules where they come up in as lectures which would often not be worked on in practice and detail by students.
+
+I would not consider myself the best at writing long reports particularly in a topic I am not as practiced in, I did find it to be an effective way of learning theoretical concepts quickly.
+
+I have never used git before to version control a report before which I was originally very unsure about at the start as reports tend to change dramatically overtime. I realised that it is really the same when using version control with code or a software project. With this in mind I decided to ask AI to prepopulate the report with subheadings, just for a consistent structure. I originally had main headings filled in but was unsure what belonged where as can be seen by my first commits, where I originally had sections in 1 & 2 that all belonged only in section 1.
+
+I believe I should have established this structure from day 1 as I found the original headings (although accurate to the document) vague as I did not insert the additional context in the document.
+
+I also realised part of the way through that I have some bad habits with git commits, I tend to only commit whenever a substantial edit is made (an entire section complete, no wip edits), I have always recognized that I have done this in the past with other software projects, but I think it may be to my detriment in the case of a report as it does not show how I progress through a section or my way of thinking at the time in the git history. Another bad habit in relation to this is committing but forgetting to push. These habits can only really be changed with experience and acknowledgement.
+
+Overall, I am happy with how the report has progresssed and I have gained a lot more knowledge by writing than just studying.
+
 ### 11.1 Key Decisions
 
 ### 11.2 Revisions
@@ -401,6 +430,10 @@ Each candidate was first classified as a class, attribute, actor, operation or o
 ### 11.3 Limitations and Unresolved Questions
 
 ## 12. AI Declaration
+
+I have used AI in accordance with MTU's AI usage rules and the brief's AI usage guidelines
+
+AI Log can be seen in /references folder, with file name ai-log.md
 
 ### 12.1 Tools and Use
 

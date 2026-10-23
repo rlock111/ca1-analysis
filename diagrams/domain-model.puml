@@ -1,0 +1,124 @@
+@startuml domain-model
+
+class Customer {
+  name
+  customerType
+  depositArrangement
+}
+
+class Enquiry {
+  enquiryDate
+  itemType
+  dimensions
+  intendedUse
+  preferredTimber
+  finish
+  deliveryLocation
+  targetDate
+  sketchesOrPhotos
+}
+
+class Quotation {
+  quoteDate
+  designAmount
+  materialsAmount
+  productionAmount
+  finishingAmount
+  deliveryAmount
+  status
+}
+
+class Order {
+  orderNumber
+  orderDate
+  depositStatus
+}
+
+class OrderItem {
+  description
+  quantity
+  status
+  expectedCompletionDate
+  dateConfirmed
+}
+
+class Product {
+  name
+  standardPrice
+}
+
+class DesignVersion {
+  versionNumber
+  createdDate
+  dimensions
+  finish
+}
+
+class Approval {
+  approvalDate
+  scope
+}
+
+class Change {
+  changeDate
+  description
+  priceChange
+  newCompletionDate
+  customerResponse
+}
+
+class Material {
+  name
+  category
+  quantityHeld
+}
+
+class MaterialCommitment {
+  quantity
+  commitDate
+}
+
+class ProductionStage {
+  stageType
+  status
+  pauseReason
+  earliestDeliveryDate
+}
+
+class QualityCheck {
+  checkDate
+  outcome
+}
+
+class Delivery {
+  deliveryDate
+  deliveryType
+  damageNotes
+}
+
+class StaffMember {
+  name
+  role
+}
+
+Customer "1" -- "0..*" Enquiry : makes >
+Enquiry "1" -- "0..*" Quotation : is answered by >
+Quotation "1" -- "0..1" Order : is accepted as >
+Order "1" -- "1..*" OrderItem : contains >
+Product "0..1" -- "0..*" OrderItem : is the basis for >
+OrderItem "1" -- "0..*" DesignVersion : is described by >
+DesignVersion "0..1" -- "0..1" DesignVersion : replaces >
+DesignVersion "1" -- "0..*" Approval : receives >
+Change "0..*" -- "1" DesignVersion : changes >
+Change "0..1" -- "1" DesignVersion : creates >
+OrderItem "0..*" -- "0..*" Material : uses >
+(OrderItem, Material) .. MaterialCommitment
+OrderItem "1" -- "0..*" ProductionStage : goes through >
+OrderItem "1" -- "0..*" QualityCheck : is checked by >
+Delivery "0..*" -- "1..*" OrderItem : delivers >
+StaffMember "1" -- "0..*" Approval : records >
+StaffMember "1" -- "0..*" Change : records >
+StaffMember "1" -- "0..*" QualityCheck : decides >
+StaffMember "0..1" -- "0..*" ProductionStage : carries out >
+
+@enduml
