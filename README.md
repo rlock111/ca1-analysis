@@ -15,12 +15,16 @@ This folder contains the report with the filename "report.md".
 
 ## /diagrams
 
-This folder contains a plantUML diagram file & a screenshot of the diagram.
+This folder contains plantUML files & screenshots of the diagrams.
 
 ## /features
 
 This folder contains .feature files with the Gherkin scenarios from section 7 of the report.
 
+## /requirements
+
+This folder contains "backlog.md" with user stories
+
 ## /references
 
-This folder contains "ai-log.md" a log of AI promts used and answers while writing the report
+This folder contains "ai-log.md" a log of AI prompts used and answers while writing the report

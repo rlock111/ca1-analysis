@@ -21,6 +21,7 @@ Staff find it difficult to identify:
 - What materials are already committed to other orders
 - What stage each item is at in production
 - When the order is realistically going to be finished.
+
   The current process relies on interpretation by staff, which can potentially lead to flaws in the product if a previous plan or outdated information is used instead of the latest version.
 
 ### 1.4 Consequences
@@ -44,7 +45,7 @@ All staff desire to keep communicating to customers directly rather than accepti
 
 ### 1.6 Uncertainty
 
-The scenario does not confirm every policy, so some details have been are still unclear. It is not clear:
+The scenario does not confirm every policy, so some details are still unclear. It is not clear:
 
 - What counts as enough approval for a quotation, design or later change.
 - How partial approval of a design may be recorded.
@@ -52,7 +53,7 @@ The scenario does not confirm every policy, so some details have been are still 
 - How production priority should change when materials, staff or machines are unavailable.
 - Who can accept a change from the approved design or sign off rework.
 - When a multi-item order is complete, and if partial delivery can be offered.
-- Which progress and date information can be. given to customers before it is confirmed.
+- Which progress and date information can be given to customers before it is confirmed.
 
 These points have not been treated as rules, and are instead treated as assumptions.
 
@@ -192,7 +193,7 @@ Each requirement describes one thing the system must do, so it can be tested on 
 | FR5  | The system shall record each approval against one design version, stating whether it is full or partial, the date and who recorded it.                                        | S3, AG3, A1          | Must     | Test that a full and a partial approval are both recorded   |
 | FR6  | The system shall stop an item being released to production until its design version has full approval.                                                                        | AG12, A1             | Must     | Test that an item with partial approval cannot be released  |
 | FR7  | The system shall link each change to the design version it replaces and record how it affects the price and completion date.                                                  | S4, AG4, P3          | Must     | Test that a change creates a new version with the new price |
-| FR8  | The system shall record how much material is committed to each order item and show the remaining free quantity.                                                               | S5, AG5, P4, A2      | Must     | Test , with X total, Y committed, free quantity = X-Y       |
+| FR8  | The system shall record how much material is committed to each order item and show the remaining free quantity.                                                               | S5, AG5, P4, A2      | Must     | Test with X total, Y committed, free quantity = X-Y         |
 | FR9  | The system shall record each production stage for an item as started, paused (with a reason) or finished, in any order.                                                       | S6, AG7, AG8, P5     | Must     | Walkthrough of recording stages for one item                |
 | FR10 | The system shall record the outcome of each quality check and who made the decision.                                                                                          | S7, AG9              | Should   | Check a sample of quality records                           |
 | FR11 | The system shall show the workshop manager all open items with their stage, any pauses or information and the expected completion date.                                       | S9, AG6, P7          | Should   | Demonstration with sample orders                            |
@@ -239,8 +240,6 @@ The following business rules are policies the workshop already follows, based on
 | BR6 | The price on a quotation may change if the specification is revised or unusual materials are chosen.                | Prices can change when specifications change or unusual materials are selected.                    | Confirmed                                                            |
 
 ### 5.2 Assumptions
-
-<!--NOTE I am not sure if i should remove these sections as they seem redundant, I will leave them here for now to tick all boxes-->
 
 Assumptions are shown in 2.6.
 
@@ -349,8 +348,8 @@ The following scenarios show how the system should behave for the most important
 | Ref | Scenario                                                    | Type     | Refers to           |
 | --- | ----------------------------------------------------------- | -------- | ------------------- |
 | GH1 | An item with full approval and a deposit is released        | Success  | FR6, BR1-2, UC8     |
-| GH2 | An item with only partial approval cannot be released       | Rule     | FR5-6, BR1, A1, UC8 |
-| GH3 | A change to the price pauses work until the customer agrees | Rule     | FR7, BR3, UC6       |
+| GH2 | An item with only partial approval cannot be released       | Failure  | FR5-6, BR1, A1, UC8 |
+| GH3 | A change to the price pauses work until the customer agrees | Success  | FR7, BR3, UC6       |
 | GH4 | A rejected change keeps the previous approved version       | Failure  | FR4, FR7, UC6       |
 | GH5 | Curing must finish before an item is delivered              | Boundary | FR12, BR4, C4, UC12 |
 
@@ -476,15 +475,15 @@ Every Must requirement links to a problem or constraint, a use case and a class,
 
 In writing this report, I learned a lot about detailing a system as it was a hands on report and required me to write using many concepts and techniques that I never used in previous work. I find that I learn best from experience, and as many of these concepts are theoretical, they are taught in most modules where they come up in as lectures which would often not be worked on in practice and detail by students.
 
-I would not consider myself the best at writing long reports particularly in a topic I am not as practiced in, I did find it to be an effective way of learning theoretical concepts quickly.
+I would not consider myself the best at writing long reports particularly in a topic I am not as practised in, I did find it to be an effective way of learning theoretical concepts quickly.
 
-I have never used git before to version control a report before which I was originally very unsure about at the start as reports tend to change dramatically overtime. I realised that it is really the same when using version control with code or a software project. With this in mind I decided to ask AI to prepopulate the report with subheadings, just for a consistent structure. I originally had main headings filled in but was unsure what belonged where as can be seen by my first commits, where I originally had sections in 1 & 2 that all belonged only in section 1.
+I have never used git before to version control a report before which I was originally very unsure about at the start as reports tend to change dramatically over time. I realised that it is really the same when using version control with code or a software project. With this in mind I decided to ask AI to prepopulate the report with subheadings, just for a consistent structure. I originally had main headings filled in but was unsure what belonged where as can be seen by my first commits, where I originally had sections in 1 & 2 that all belonged only in section 1.
 
 I believe I should have established this structure from day 1 as I found the original headings (although accurate to the document) vague as I did not insert the additional context in the document.
 
-I also realised part of the way through that I have some bad habits with git commits, I tend to only commit whenever a substantial edit is made (an entire section complete, no wip edits), I have always recognized that I have done this in the past with other software projects, but I think it may be to my detriment in the case of a report as it does not show how I progress through a section or my way of thinking at the time in the git history. Another bad habit in relation to this is committing but forgetting to push. These habits can only really be changed with experience and acknowledgement.
+I also realised part of the way through that I have some bad habits with git commits, I tend to only commit whenever a substantial edit is made (an entire section complete, no wip edits), I have always recognised that I have done this in the past with other software projects, but I think it may be to my detriment in the case of a report as it does not show how I progress through a section or my way of thinking at the time in the git history. Another bad habit in relation to this is committing but forgetting to push. These habits can only really be changed with experience and acknowledgement.
 
-Overall, I am happy with how the report has progresssed and I have gained a lot more knowledge by writing than just studying.
+Overall, I am happy with how the report has progressed and I have gained a lot more knowledge by writing than just studying.
 
 ### 11.1 Key Decisions
 
@@ -533,10 +532,14 @@ Other Tools used:
 ### 12.2 Verification
 
 A good example of my verification process is with the suggestion of the data protection stakeholder,
-Upon asking for missing details in stakeholder catalog, AI suggested adding data protection, I checked if data protection was mentioned in the document, and used my own judgement to decide against adding it in, I then changed my mind on excluding data protection when I was looking over the lectures and saw data protection being used.
+Upon asking for missing details in stakeholder catalogue, AI suggested adding data protection, I checked if data protection was mentioned in the document, and used my own judgement to decide against adding it in, I then changed my mind on excluding data protection when I was looking over the lectures and saw data protection being used.
 This example shows how I checked and ensured accuracy with the document, my thought process and using my own judgement whenever AI was used.
 
 ### 12.3 Changed or Rejected Suggestions
 
 - AI suggested time limits for testing metrics, I used them for NFR1 and NFR5 before removing as I did not believe that time was the best testing metric for these requirements
 - AI suggested accounting and data protection as stakeholders, I used accounting originally and decided against data protection but after reconsidering decided I to add data protection as it was included when I rechecked the lectures (mentioned in 12.2)
+
+## Appendix
+
+User stories backlog is located at requirements/backlog.md
